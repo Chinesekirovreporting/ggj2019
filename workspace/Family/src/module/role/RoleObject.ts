@@ -10,43 +10,48 @@ class RoleObject extends egret.Sprite{
 	public positionY:number;
 	// 逻辑属性
 	public spriteID:number;
-	
 
 	public constructor(x:number,y:number) {
 		super();
-		this.graphics.beginFill(0x00ff00);
-		this.graphics.drawCircle(0,0,30);
+		this.graphics.beginFill(0xff0000);
+		this.graphics.drawRect(0,0,200,300);
 		this.graphics.endFill();
 		this.init(x,y);
 	}
 
-	private init(x:number, y:number):void {
-		this.positionX = x;
-		this.positionY = y;
+	private init(positionX:number, positionY:number):void {
+		this.positionX = positionX;
+		this.positionY = positionY;
 		this.refreshStagePosition();
 		this.spriteID = RoleObject.spritePlus;
 		RoleObject.spritePlus++;
+		//TEXT
+		this.setDirection(-90);
+		this._speed = 0;
 	}
 
-	private setDirection():void {
-		this.rotation = 1;
+	private setDirection(rotation:number):void {
+		this.rotation = rotation;
 	}
 
 	public moving():void {
-		var moveNum:number;
-		var moveX:number = moveNum * Math.cos(this.rotation)
-		var moveY:number = moveNum * Math.sin(this.rotation)
+		var moveNum:number = this._speed;
+		var moveRotation  = this.rotation - 90;
+		var moveX:number = moveNum * Math.cos(moveRotation/180*Math.PI);
+		var moveY:number = moveNum * Math.sin(moveRotation/180*Math.PI);
+		this.positionX += moveX;
+		this.positionY += moveY;
 	}
 	
 	/**
 	 * 玩家为中心的相对位置
 	 */
-	private refreshStagePosition():void {
+	public refreshStagePosition():void {
 		this.x = this.positionX - PlayerManager.inst.player.positionX + PlayerManager.inst.player.playerObject.x;//this.positionX;
 		this.y = this.positionY - PlayerManager.inst.player.positionY + PlayerManager.inst.player.playerObject.y;//this.positionY;
 	}
 
-	public changePosition(positionX:number,positionY:number):void {
+	public changePosition(positionX:number, positionY:number):void {
 		this.positionX = positionX;
 		this.positionY = positionY;
 		this.refreshStagePosition();
@@ -54,5 +59,6 @@ class RoleObject extends egret.Sprite{
 
 	public updateFrame():void {
 		this.moving();
+		this.refreshStagePosition();
 	}
 }

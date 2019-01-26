@@ -24,10 +24,16 @@ class PlayerObject extends egret.Sprite{
 		this.positionX = x;
 		this.positionY = y;
 		this.refreshStagePosition();
+		//TEXT
+		var rotation = MathUtil.getRotationByPoints(new egret.Point(45,45),new egret.Point(0,0));
+		this.setDirection(rotation + 90);
+		this._speed = 1;
 	}
-
-	private setDirection():void {
-		this.rotation = 1;
+	/**
+	 * 0点顺时针
+	 */
+	private setDirection(rotation:number):void {
+		this.rotation = rotation;
 	}
 
 	public excuteTurn():void {
@@ -39,9 +45,12 @@ class PlayerObject extends egret.Sprite{
 	}
 
 	public moving():void {
-		// var moveNum:number;
-		// var moveX:number = moveNum * Math.cos(this.rotation)
-		// var moveY:number = moveNum * Math.sin(this.rotation)
+		var moveNum:number = this._speed;
+		var moveRotation  = this.rotation - 90;
+		var moveX:number = moveNum * Math.cos(moveRotation/180*Math.PI);
+		var moveY:number = moveNum * Math.sin(moveRotation/180*Math.PI);
+		this.positionX += moveX;
+		this.positionY += moveY;
 	}
 
 	private refreshStagePosition():void {
@@ -49,7 +58,7 @@ class PlayerObject extends egret.Sprite{
 		this.y = GameSetting.playerCenterY;//this.positionY;
 	}
 
-	public changePosition(positionX:number,positionY:number):void {
+	public changePosition(positionX:number, positionY:number):void {
 		this.positionX = positionX;
 		this.positionY = positionY;
 		this.refreshStagePosition();

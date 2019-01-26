@@ -1,4 +1,4 @@
-class LayerManager {
+	class LayerManager {
 	public static root:egret.DisplayObjectContainer;
 	public static map:egret.Sprite;
 	public static roles:egret.Sprite;

@@ -12,26 +12,32 @@ var RoleObject = (function (_super) {
     __extends(RoleObject, _super);
     function RoleObject(x, y) {
         var _this = _super.call(this) || this;
-        _this.graphics.beginFill(0x00ff00);
-        _this.graphics.drawCircle(0, 0, 30);
+        _this.graphics.beginFill(0xff0000);
+        _this.graphics.drawRect(0, 0, 200, 300);
         _this.graphics.endFill();
         _this.init(x, y);
         return _this;
     }
-    RoleObject.prototype.init = function (x, y) {
-        this.positionX = x;
-        this.positionY = y;
+    RoleObject.prototype.init = function (positionX, positionY) {
+        this.positionX = positionX;
+        this.positionY = positionY;
         this.refreshStagePosition();
         this.spriteID = RoleObject.spritePlus;
         RoleObject.spritePlus++;
+        //TEXT
+        this.setDirection(-90);
+        this._speed = 0;
     };
-    RoleObject.prototype.setDirection = function () {
-        this.rotation = 1;
+    RoleObject.prototype.setDirection = function (rotation) {
+        this.rotation = rotation;
     };
     RoleObject.prototype.moving = function () {
-        var moveNum;
-        var moveX = moveNum * Math.cos(this.rotation);
-        var moveY = moveNum * Math.sin(this.rotation);
+        var moveNum = this._speed;
+        var moveRotation = this.rotation - 90;
+        var moveX = moveNum * Math.cos(moveRotation / 180 * Math.PI);
+        var moveY = moveNum * Math.sin(moveRotation / 180 * Math.PI);
+        this.positionX += moveX;
+        this.positionY += moveY;
     };
     /**
      * 玩家为中心的相对位置
@@ -47,6 +53,7 @@ var RoleObject = (function (_super) {
     };
     RoleObject.prototype.updateFrame = function () {
         this.moving();
+        this.refreshStagePosition();
     };
     RoleObject.spritePlus = 0;
     return RoleObject;

@@ -25,9 +25,13 @@ var PlayerObject = (function (_super) {
         this.positionX = x;
         this.positionY = y;
         this.refreshStagePosition();
+        //TEXT
+        var rotation = MathUtil.getRotationByPoints(new egret.Point(45, 45), new egret.Point(0, 0));
+        this.setDirection(rotation + 90);
+        this._speed = 1;
     };
-    PlayerObject.prototype.setDirection = function () {
-        this.rotation = 1;
+    PlayerObject.prototype.setDirection = function (rotation) {
+        this.rotation = rotation;
     };
     PlayerObject.prototype.excuteTurn = function () {
         if (this.turnLeftOn) {
@@ -38,9 +42,12 @@ var PlayerObject = (function (_super) {
         }
     };
     PlayerObject.prototype.moving = function () {
-        // var moveNum:number;
-        // var moveX:number = moveNum * Math.cos(this.rotation)
-        // var moveY:number = moveNum * Math.sin(this.rotation)
+        var moveNum = this._speed;
+        var moveRotation = this.rotation - 90;
+        var moveX = moveNum * Math.cos(moveRotation / 180 * Math.PI);
+        var moveY = moveNum * Math.sin(moveRotation / 180 * Math.PI);
+        this.positionX += moveX;
+        this.positionY += moveY;
     };
     PlayerObject.prototype.refreshStagePosition = function () {
         this.x = GameSetting.playerCenterX; //this.positionX;

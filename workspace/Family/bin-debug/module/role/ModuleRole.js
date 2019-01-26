@@ -14,6 +14,7 @@ var ModuleRole = (function () {
         GameModel.roles.addEventListener(ModelRolesEvent.ON_ADD_ROLE, this.onAddRole, this);
         GameModel.roles.addEventListener(ModelRolesEvent.ON_REMOVE_ROLE, this.onRemoveRole, this);
         GameModel.roles.addEventListener(ModelRolesEvent.ON_CHANGE_ROLE_POS, this.onChangeRolePos, this);
+        GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePlayerPos, this);
     };
     ModuleRole.prototype.onExit = function () {
         LayerManager.roles.removeChild(this.objectMapViews);
@@ -23,6 +24,7 @@ var ModuleRole = (function () {
         GameModel.roles.removeEventListener(ModelRolesEvent.ON_ADD_ROLE, this.onAddRole, this);
         GameModel.roles.removeEventListener(ModelRolesEvent.ON_REMOVE_ROLE, this.onRemoveRole, this);
         GameModel.roles.removeEventListener(ModelRolesEvent.ON_CHANGE_ROLE_POS, this.onChangeRolePos, this);
+        GameModel.player.removeEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePlayerPos, this);
     };
     ModuleRole.prototype.onAddRole = function (event) {
         var roleVo = event.data;
@@ -44,6 +46,8 @@ var ModuleRole = (function () {
         var roleVo = event.data;
         var roleObject = this.objectDict[roleObject.spriteID];
         roleObject.changePosition(roleVo.positionX, roleVo.positionY);
+    };
+    ModuleRole.prototype.onChangePlayerPos = function (event) {
     };
     return ModuleRole;
 }());

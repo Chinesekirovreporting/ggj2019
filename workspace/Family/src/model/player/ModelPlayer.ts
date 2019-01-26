@@ -9,4 +9,9 @@ class ModelPlayer extends egret.EventDispatcher{
 	private init():void {
 		this.myPlayer = new PlayerVo();
 	}
+
+	public changePlayerPos(playerVo:PlayerVo, positionX:number, positionY:number):void {
+		playerVo.setPosition(positionX,positionY);
+		this.dispatchEventWith(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, false, playerVo);
+	}
 }

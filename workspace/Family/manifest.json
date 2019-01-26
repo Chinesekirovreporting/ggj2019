@@ -15,6 +15,7 @@
 		"bin-debug/Platform.js",
 		"bin-debug/core/GameSetting.js",
 		"bin-debug/core/LayerManager.js",
+		"bin-debug/core/Root.js",
 		"bin-debug/model/GameModel.js",
 		"bin-debug/model/player/ModelPlayer.js",
 		"bin-debug/model/player/ModelPlayerEvent.js",
@@ -37,6 +38,7 @@
 		"bin-debug/player/Player.js",
 		"bin-debug/player/PlayerInput.js",
 		"bin-debug/player/PlayerManager.js",
-		"bin-debug/player/PlayerObject.js"
+		"bin-debug/player/PlayerObject.js",
+		"bin-debug/util/MathUtil.js"
 	]
 }

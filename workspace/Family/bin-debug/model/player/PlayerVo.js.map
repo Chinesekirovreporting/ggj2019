@@ -1,1 +1,1 @@
-{"version":3,"file":"PlayerVo.js","sourceRoot":"","sources":["../../../src/model/player/PlayerVo.ts"],"names":[],"mappings":";;;AAAA;IAQC;IACA,CAAC;IACF,eAAC;AAAD,CAAC,AAVD,IAUC;AAVK,UAAA,QAAQ,uBAUb,CAAA"}
+{"version":3,"file":"PlayerVo.js","sourceRoot":"","sources":["../../../src/model/player/PlayerVo.ts"],"names":[],"mappings":";;;AAAA;IAWC;IACA,CAAC;IAEM,8BAAW,GAAlB,UAAmB,SAAgB,EAAC,SAAgB;QACnD,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;QAC3B,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC5B,CAAC;IACF,eAAC;AAAD,CAAC,AAlBD,IAkBC;AAlBK,UAAA,QAAQ,uBAkBb,CAAA"}

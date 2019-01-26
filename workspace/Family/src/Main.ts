@@ -46,7 +46,6 @@ class Main extends egret.DisplayObjectContainer {
         // this.createGameScene();
         // const result = await RES.getRes("description_json");//Async("description_json")
         // this.startAnimation(result);
-
     }
 
     private async loadResource() {
@@ -76,6 +75,7 @@ class Main extends egret.DisplayObjectContainer {
         // 初始化UI
         // fairygui.UIPackage.addPackage("bag");
         // this.stage.addChild(fairygui.GRoot.inst.displayObject);
+        Root.root = this;
         // 初始化图层
         LayerManager.init(this);
         // 初始化引擎

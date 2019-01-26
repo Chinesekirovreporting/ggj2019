@@ -4,6 +4,10 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var PlayerVo = (function () {
     function PlayerVo() {
     }
+    PlayerVo.prototype.setPosition = function (positionX, positionY) {
+        this.positionX = positionX;
+        this.positionY = positionY;
+    };
     return PlayerVo;
 }());
 __reflect(PlayerVo.prototype, "PlayerVo");

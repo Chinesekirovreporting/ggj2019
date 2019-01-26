@@ -16,6 +16,7 @@ class ModuleRole {
 		GameModel.roles.addEventListener(ModelRolesEvent.ON_ADD_ROLE, this.onAddRole, this);
 		GameModel.roles.addEventListener(ModelRolesEvent.ON_REMOVE_ROLE, this.onRemoveRole,this);
 		GameModel.roles.addEventListener(ModelRolesEvent.ON_CHANGE_ROLE_POS, this.onChangeRolePos,this);
+		GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePlayerPos, this);
 	}
 
 	public onExit():void {
@@ -27,6 +28,7 @@ class ModuleRole {
 		GameModel.roles.removeEventListener(ModelRolesEvent.ON_ADD_ROLE, this.onAddRole, this);
 		GameModel.roles.removeEventListener(ModelRolesEvent.ON_REMOVE_ROLE, this.onRemoveRole,this);
 		GameModel.roles.removeEventListener(ModelRolesEvent.ON_CHANGE_ROLE_POS, this.onChangeRolePos,this);
+		GameModel.player.removeEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePlayerPos, this);
 	}
 
 	private onAddRole(event:egret.Event):void {
@@ -51,5 +53,9 @@ class ModuleRole {
 		var roleVo:RoleVo = event.data;
 		var roleObject:RoleObject = this.objectDict[roleObject.spriteID];
 		roleObject.changePosition(roleVo.positionX,roleVo.positionY);
+	}
+
+	private onChangePlayerPos(event:egret.Event):void {
+		
 	}
 }
