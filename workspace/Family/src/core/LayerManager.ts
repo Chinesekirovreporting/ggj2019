@@ -15,5 +15,6 @@ class LayerManager {
 		LayerManager.root.addChild(LayerManager.roles);
 		LayerManager.root.addChild(LayerManager.player);
 		LayerManager.root.addChild(LayerManager.ui);
+		LayerManager.ui.addChild(fairygui.GRoot.inst.displayObject);
 	}
 }

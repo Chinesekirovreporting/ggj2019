@@ -121,6 +121,13 @@ var Main = (function (_super) {
         });
     };
     Main.prototype.initGame = function () {
+        fairygui.UIPackage.addPackage("Package1_fui");
+        fairygui.UIPackage.addPackage("joystick_fui");
+        // fairygui.UIConfig.defaultFont = "宋体";
+        // fairygui.UIConfig.verticalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_VT");
+        // fairygui.UIConfig.horizontalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_HZ");
+        // fairygui.UIConfig.popupMenu = fairygui.UIPackage.getItemURL("Basic", "PopupMenu");
+        // fairygui.UIConfig.buttonSound = fairygui.UIPackage.getItemURL("Basic","click");
         // 初始化UI
         // fairygui.UIPackage.addPackage("bag");
         // this.stage.addChild(fairygui.GRoot.inst.displayObject);
@@ -129,6 +136,18 @@ var Main = (function (_super) {
         // 初始化引擎
         GameModel.init();
         GameModule.init();
+        this.showGame();
+    };
+    Main.prototype.showGame = function () {
+        GameModule.showTitle();
+        // GameModule.gameStart();
+        // GameModule.joystick.show();
+        // GameModule.role.onShow();
+        // GameModule.scene.onShow();
+    };
+    Main.prototype.exitGame = function () {
+        GameModule.role.onExit();
+        GameModule.scene.onExit();
     };
     /**
      * 创建游戏场景

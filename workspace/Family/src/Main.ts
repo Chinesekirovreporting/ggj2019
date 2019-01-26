@@ -63,6 +63,16 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private initGame():void {
+
+
+        fairygui.UIPackage.addPackage("Package1_fui");
+        fairygui.UIPackage.addPackage("joystick_fui");
+        // fairygui.UIConfig.defaultFont = "宋体";
+        // fairygui.UIConfig.verticalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_VT");
+        // fairygui.UIConfig.horizontalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_HZ");
+        // fairygui.UIConfig.popupMenu = fairygui.UIPackage.getItemURL("Basic", "PopupMenu");
+        // fairygui.UIConfig.buttonSound = fairygui.UIPackage.getItemURL("Basic","click");
+
         // 初始化UI
         // fairygui.UIPackage.addPackage("bag");
         // this.stage.addChild(fairygui.GRoot.inst.displayObject);
@@ -75,8 +85,12 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private showGame():void {
-        GameModule.role.onShow();
-        GameModule.scene.onShow();
+
+        GameModule.showTitle();
+        // GameModule.gameStart();
+        // GameModule.joystick.show();
+        // GameModule.role.onShow();
+        // GameModule.scene.onShow();
     }
 
     private exitGame():void {

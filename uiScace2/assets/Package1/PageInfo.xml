@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1136,640">
+  <displayList>
+    <graph id="n0_re5s" name="n0" xy="3,1" size="1136,640" type="rect"/>
+    <component id="n1_re5s" name="n1" src="re5s1" fileName="BtnGameStart.xml" xy="395,289"/>
+    <text id="n2_jei6" name="n2" xy="393,63" size="309,87" fontSize="75" text="流浪家园"/>
+    <component id="n3_jei6" name="n3" src="jei64" fileName="BtnTem.xml" xy="392,412"/>
+  </displayList>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="qlj2zufh" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="re5s0" name="PageInfo.xml" path="/" exported="true"/>
+    <component id="re5s1" name="BtnGameStart.xml" path="/"/>
+    <component id="jei62" name="PageTeam.xml" path="/" exported="true"/>
+    <component id="jei63" name="BtnReturn.xml" path="/"/>
+    <component id="jei64" name="BtnTem.xml" path="/"/>
+  </resources>
+  <publish name="Package1" path="D:\Users\sk\egretWorkspace\ggj2019\workspace\Family\resource\assets\fui"/>
+</packageDescription>

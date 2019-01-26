@@ -7,6 +7,20 @@ var GameModule = (function () {
     GameModule.init = function () {
         GameModule.scene = new ModuleScene();
         GameModule.role = new ModuleRole();
+        GameModule.pageInfo = new PageInfo();
+        GameModule.joystick = new Joystick();
+        GameModule.pageTeam = new PageTeam();
+    };
+    GameModule.gameStart = function () {
+        GameModule.role.onShow();
+        GameModule.scene.onShow();
+        GameModule.joystick.show();
+    };
+    GameModule.showTitle = function () {
+        GameModule.pageInfo.show();
+    };
+    GameModule.showTeam = function () {
+        GameModule.pageTeam.show();
     };
     return GameModule;
 }());
