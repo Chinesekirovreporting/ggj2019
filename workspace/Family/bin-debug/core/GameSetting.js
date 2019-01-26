@@ -4,8 +4,10 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var GameSetting = (function () {
     function GameSetting() {
     }
-    GameSetting.playerCenterX = 200;
-    GameSetting.playerCenterY = 200;
+    GameSetting.stageWidth = 1136;
+    GameSetting.stageHeight = 640;
+    GameSetting.playerCenterX = GameSetting.stageWidth / 2;
+    GameSetting.playerCenterY = GameSetting.stageHeight / 2;
     return GameSetting;
 }());
 __reflect(GameSetting.prototype, "GameSetting");

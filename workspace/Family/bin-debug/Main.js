@@ -131,6 +131,7 @@ var Main = (function (_super) {
         // 初始化UI
         // fairygui.UIPackage.addPackage("bag");
         // this.stage.addChild(fairygui.GRoot.inst.displayObject);
+        Root.root = this;
         // 初始化图层
         LayerManager.init(this);
         // 初始化引擎

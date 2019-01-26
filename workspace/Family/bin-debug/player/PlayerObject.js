@@ -28,8 +28,11 @@ var PlayerObject = (function (_super) {
         //TEXT
         var rotation = MathUtil.getRotationByPoints(new egret.Point(45, 45), new egret.Point(0, 0));
         this.setDirection(rotation + 90);
-        this._speed = 1;
+        this._speed = 5;
     };
+    /**
+     * 0点顺时针
+     */
     PlayerObject.prototype.setDirection = function (rotation) {
         this.rotation = rotation;
     };

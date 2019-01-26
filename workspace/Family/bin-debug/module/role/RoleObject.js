@@ -13,7 +13,7 @@ var RoleObject = (function (_super) {
     function RoleObject(x, y) {
         var _this = _super.call(this) || this;
         _this.graphics.beginFill(0xff0000);
-        _this.graphics.drawRect(0, 0, 200, 300);
+        _this.graphics.drawRect(0, 0, 50, 100);
         _this.graphics.endFill();
         _this.init(x, y);
         return _this;

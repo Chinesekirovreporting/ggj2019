@@ -47,12 +47,22 @@ var Joystick = (function (_super) {
             else {
                 console.log('up');
             }
+            console.log("角度", angle + 90);
+            this.updatePlayerInput(angle + 90);
         }
     };
     Joystick.prototype.onJoystickUp = function (evt) {
         if (this.isShow) {
             this._text.text = "";
         }
+    };
+    Joystick.prototype.updatePlayerInput = function (stickAngle) {
+        // if(stickAngle - PlayerManager.inst.player.playerObject.rotation > 0)
+        PlayerManager.inst.player.playerObject.rotation = stickAngle;
+    };
+    Joystick.prototype.resetPlayerInput = function () {
+        PlayerInput.leftDown = false;
+        PlayerInput.rightDown = false;
     };
     return Joystick;
 }(PageBase));
