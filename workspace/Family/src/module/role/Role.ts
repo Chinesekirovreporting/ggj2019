@@ -28,4 +28,9 @@ class Role {
 	public hiting():void {
 
 	}
+
+	public reset():void {
+		this.roleVo.reset();
+		this.roleObject.reset();
+	}
 }

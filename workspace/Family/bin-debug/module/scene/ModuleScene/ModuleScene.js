@@ -24,17 +24,32 @@ var ModuleScene = (function (_super) {
         Root.root.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
         this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimeFunc, this);
         this.timer.start();
-        this.addRole(100, 100);
+        this.createBalls(50);
         // this.addRole(200,200);
         // stage.addEventListener(egret.Event.ONT)
     };
     ModuleScene.prototype.createPlayer = function () {
         var playerVo = GameModel.player.myPlayer;
-        var playerObject = new PlayerObject(0, 0);
+        var playerObject = new PlayerObject(playerVo.positionX, playerVo.positionY);
         var player = new Player();
         player.playerObject = playerObject;
         player.playerVo = playerVo;
         PlayerManager.inst.setPlayer(player);
+    };
+    ModuleScene.prototype.createBalls = function (num) {
+        // var minX:number = -10000;
+        // var minY:number = -10000;
+        var maxX = 3000;
+        var maxY = 3000;
+        var x;
+        var y;
+        for (var i = 0; i < num; i++) {
+            x = Math.random() * maxX - maxX / 2;
+            y = Math.random() * maxY - maxY / 2;
+            var roleVo = new RoleVo();
+            roleVo.setPosition(x, y);
+            GameModel.roles.addRole(roleVo);
+        }
     };
     ModuleScene.prototype.createBase = function () {
         this.baseObject = new BaseObject();
@@ -57,11 +72,17 @@ var ModuleScene = (function (_super) {
     };
     ModuleScene.prototype.onTimeFunc = function () {
         // this.addRole();
+        GameModule.mainUI.onChangePos();
     };
     ModuleScene.prototype.onEnterFrame = function (event) {
         PlayerManager.inst.updateFrame();
         RoleManager.inst.updateFrame();
         this.baseObject.updateFrame();
+    };
+    ModuleScene.prototype.resetScene = function () {
+        PlayerManager.inst.reset();
+        RoleManager.inst.reset();
+        this.createBalls(50);
     };
     return ModuleScene;
 }(egret.EventDispatcher));

@@ -1,4 +1,5 @@
 class RoleManager {
+
 	public static manager:RoleManager;
 
 	public roleDict:Object;
@@ -9,6 +10,7 @@ class RoleManager {
 		}
 		return RoleManager.manager;
 	}
+	
 	public constructor() {
 		this.roleDict = new Object();
 	}
@@ -34,6 +36,18 @@ class RoleManager {
 		for(var key in this.roleDict) {
 			role = this.roleDict[key];
 			role.updateFrame();
+		}
+	}
+
+	public reset():void {
+		var role:Role;
+		for(var key in this.roleDict) {
+			role = this.roleDict[key];
+			role.reset();
+		}
+
+		for(var key in this.roleDict) {
+			delete this.roleDict[key];
 		}
 	}
 }

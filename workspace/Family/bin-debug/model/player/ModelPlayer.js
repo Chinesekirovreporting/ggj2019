@@ -17,10 +17,7 @@ var ModelPlayer = (function (_super) {
     }
     ModelPlayer.prototype.init = function () {
         this.myPlayer = new PlayerVo();
-    };
-    ModelPlayer.prototype.changePlayerPos = function (playerVo, positionX, positionY) {
-        playerVo.setPosition(positionX, positionY);
-        this.dispatchEventWith(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, false, playerVo);
+        this.myPlayer.setPosition(0, 0);
     };
     return ModelPlayer;
 }(egret.EventDispatcher));

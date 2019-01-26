@@ -20,6 +20,9 @@ var PlayerManager = (function () {
     PlayerManager.prototype.updateFrame = function () {
         this.player.updateFrame();
     };
+    PlayerManager.prototype.reset = function () {
+        this.player.reset();
+    };
     return PlayerManager;
 }());
 __reflect(PlayerManager.prototype, "PlayerManager");

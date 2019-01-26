@@ -14,7 +14,7 @@ class RoleObject extends egret.Sprite{
 	public constructor(x:number,y:number) {
 		super();
 		this.graphics.beginFill(0xff0000);
-		this.graphics.drawRect(0,0,50,100);
+		this.graphics.drawCircle(0,0,50);
 		this.graphics.endFill();
 		this.init(x,y);
 	}
@@ -60,5 +60,9 @@ class RoleObject extends egret.Sprite{
 	public updateFrame():void {
 		this.moving();
 		this.refreshStagePosition();
+	}
+
+	public reset():void {
+		
 	}
 }

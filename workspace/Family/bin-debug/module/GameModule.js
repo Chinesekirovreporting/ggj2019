@@ -7,6 +7,7 @@ var GameModule = (function () {
     GameModule.init = function () {
         GameModule.scene = new ModuleScene();
         GameModule.role = new ModuleRole();
+        GameModule.mainUI = new ModuleMainUI();
         GameModule.pageInfo = new PageInfo();
         GameModule.joystick = new Joystick();
         GameModule.pageTeam = new PageTeam();
@@ -14,6 +15,7 @@ var GameModule = (function () {
     GameModule.gameStart = function () {
         GameModule.role.onShow();
         GameModule.scene.onShow();
+        GameModule.mainUI.onShow();
         GameModule.joystick.show();
     };
     GameModule.showTitle = function () {

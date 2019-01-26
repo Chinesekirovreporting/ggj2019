@@ -2,6 +2,8 @@ class Player {
 	public playerVo:PlayerVo;
 	public playerObject:PlayerObject;
 
+	public isActive:boolean;
+
 	public constructor() {
 	}
 
@@ -16,6 +18,7 @@ class Player {
 	public updateFrame():void {
 		this.excuteInput();//处理输入
 		this.playerObject.updateFrame();
+		this.textHit();
 	}
 
 	public excuteInput():void{
@@ -36,11 +39,35 @@ class Player {
 		}
 	}
 
-	public textHit():void {
-
+	public textHit():boolean {
+		var objects:Object = RoleManager.inst.roleDict;
+		var role:Role;
+		for(var key in objects) {
+			role = objects[key];
+			if((role.positionX - this.positionX)*(role.positionX - this.positionX) + 
+			(role.positionY - this.positionY) * (role.positionY - this.positionY) < 100*100) {
+				if(role.roleVo.isBall) {
+					this.playerHiting();
+				}else {
+					this.roleHiting(role);
+				}
+				return true;
+			}
+		}
+		return false;
 	}
 
-	public hiting():void {
-		
+	public roleHiting(role:Role):void {
+		GameModel.roles.removeRole(role.roleVo);
+	}
+
+	public playerHiting():void {
+		this.playerObject._speed = 0;
+		GameModule.mainUI.btnRestart.visible = true;
+	}
+
+	public reset():void {
+		this.playerVo.reset();
+		this.playerObject.reset();
 	}
 }

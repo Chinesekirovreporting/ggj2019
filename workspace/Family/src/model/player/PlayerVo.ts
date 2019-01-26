@@ -9,11 +9,17 @@ class PlayerVo {
 	// 逻辑属性
 	public isAlive:boolean;
 
-	public constructor() {
-	}
 
 	public setPosition(positionX:number,positionY:number):void {
 		this.positionX = positionX;
 		this.positionY = positionY;
+	}
+
+	public constructor() {
+	}
+
+	public reset():void {
+		this.positionX = 0;
+		this.positionY = 0;
 	}
 }

@@ -62,8 +62,6 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private initGame():void {
-
-
         fairygui.UIPackage.addPackage("Package1_fui");
         fairygui.UIPackage.addPackage("joystick_fui");
         // fairygui.UIConfig.defaultFont = "宋体";

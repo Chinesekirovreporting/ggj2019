@@ -13,7 +13,7 @@ class ModelRoles extends egret.EventDispatcher{
 
 	public removeRole(roleVo:RoleVo):void {
 		this.rolesList.splice(this.rolesList.indexOf(roleVo));
-		this.dispatchEventWith(ModelRolesEvent.ON_ADD_ROLE, false, roleVo);
+		this.dispatchEventWith(ModelRolesEvent.ON_REMOVE_ROLE, false, roleVo);
 	}
 
 	public changeRolePos(roleVo:RoleVo,positionX:number,positionY:number):void {

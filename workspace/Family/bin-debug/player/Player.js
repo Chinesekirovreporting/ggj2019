@@ -21,6 +21,7 @@ var Player = (function () {
     Player.prototype.updateFrame = function () {
         this.excuteInput(); //处理输入
         this.playerObject.updateFrame();
+        this.textHit();
     };
     Player.prototype.excuteInput = function () {
         if (PlayerInput.speedDonw) {
@@ -37,8 +38,33 @@ var Player = (function () {
         }
     };
     Player.prototype.textHit = function () {
+        var objects = RoleManager.inst.roleDict;
+        var role;
+        for (var key in objects) {
+            role = objects[key];
+            if ((role.positionX - this.positionX) * (role.positionX - this.positionX) +
+                (role.positionY - this.positionY) * (role.positionY - this.positionY) < 100 * 100) {
+                if (role.roleVo.isBall) {
+                    this.playerHiting();
+                }
+                else {
+                    this.roleHiting(role);
+                }
+                return true;
+            }
+        }
+        return false;
     };
-    Player.prototype.hiting = function () {
+    Player.prototype.roleHiting = function (role) {
+        GameModel.roles.removeRole(role.roleVo);
+    };
+    Player.prototype.playerHiting = function () {
+        this.playerObject._speed = 0;
+        GameModule.mainUI.btnRestart.visible = true;
+    };
+    Player.prototype.reset = function () {
+        this.playerVo.reset();
+        this.playerObject.reset();
     };
     return Player;
 }());

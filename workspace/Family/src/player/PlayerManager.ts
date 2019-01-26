@@ -17,4 +17,8 @@ class PlayerManager {
 	public updateFrame():void {
 		this.player.updateFrame();
 	}
+
+	public reset():void{
+		this.player.reset();
+	}
 }   

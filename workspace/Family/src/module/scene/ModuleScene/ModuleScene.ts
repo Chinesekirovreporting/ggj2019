@@ -17,18 +17,34 @@ class ModuleScene extends egret.EventDispatcher {
 		Root.root.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame,this);
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimeFunc, this);
 		this.timer.start();
-		this.addRole(100,100);
+		this.createBalls(50);
 		// this.addRole(200,200);
 		// stage.addEventListener(egret.Event.ONT)
 	}
 
 	private createPlayer():void {
 		var playerVo = GameModel.player.myPlayer;
-		var playerObject:PlayerObject = new PlayerObject(0,0);
+		var playerObject:PlayerObject = new PlayerObject(playerVo.positionX,playerVo.positionY);
 		var player:Player = new Player();
 		player.playerObject = playerObject;
 		player.playerVo = playerVo;
 		PlayerManager.inst.setPlayer(player);
+	}
+
+	private createBalls(num:number):void {
+		// var minX:number = -10000;
+		// var minY:number = -10000;
+		var maxX:number = 3000;
+		var maxY:number = 3000;
+		var x:number;
+		var y:number;
+		for(var i = 0; i < num; i++) {
+			x = Math.random() * maxX - maxX/2;
+			y = Math.random() * maxY - maxY/2;
+			var roleVo:RoleVo = new RoleVo();
+			roleVo.setPosition(x,y);
+			GameModel.roles.addRole(roleVo);
+		}
 	}
 
 	private createBase():void {
@@ -56,11 +72,18 @@ class ModuleScene extends egret.EventDispatcher {
 
 	private onTimeFunc():void {
 		// this.addRole();
+		GameModule.mainUI.onChangePos();
 	}
 
 	private onEnterFrame(event:egret.Event):void {
 		PlayerManager.inst.updateFrame();
 		RoleManager.inst.updateFrame();
 		this.baseObject.updateFrame();
+	}
+
+	public resetScene():void {
+		PlayerManager.inst.reset();
+		RoleManager.inst.reset();
+		this.createBalls(50);
 	}
 }

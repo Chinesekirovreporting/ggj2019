@@ -6,6 +6,9 @@
     <component id="jei62" name="PageTeam.xml" path="/" exported="true"/>
     <component id="jei63" name="BtnReturn.xml" path="/"/>
     <component id="jei64" name="BtnTem.xml" path="/"/>
+    <component id="9feg5" name="MainUI.xml" path="/" exported="true"/>
+    <movieclip id="9feg6" name="MovieClip1.jta" path="/"/>
+    <component id="9feg7" name="BtnRestart.xml" path="/"/>
   </resources>
-  <publish name="Package1" path="D:\Users\sk\egretWorkspace\ggj2019\workspace\Family\resource\assets\fui"/>
+  <publish name="Package1" path="..\workspace\Family\resource\assets\fui"/>
 </packageDescription>

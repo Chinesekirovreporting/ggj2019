@@ -35,6 +35,16 @@ var RoleManager = (function () {
             role.updateFrame();
         }
     };
+    RoleManager.prototype.reset = function () {
+        var role;
+        for (var key in this.roleDict) {
+            role = this.roleDict[key];
+            role.reset();
+        }
+        for (var key in this.roleDict) {
+            delete this.roleDict[key];
+        }
+    };
     return RoleManager;
 }());
 __reflect(RoleManager.prototype, "RoleManager");

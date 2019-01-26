@@ -27,11 +27,6 @@
 			"name": "Package1_fui"
 		},
 		{
-			"url": "assets/fui/bag.fui",
-			"type": "bin",
-			"name": "bag_fui"
-		},
-		{
 			"url": "assets/fui/joystick_atlas0.png",
 			"type": "image",
 			"name": "joystick_fui_atlas0"

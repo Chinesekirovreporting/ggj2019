@@ -16,10 +16,12 @@ var PlayerObject = (function (_super) {
         _this.turnLeftOn = false;
         _this.turnRightOn = false;
         _this.graphics.beginFill(0x00ff00);
-        _this.graphics.drawCircle(0, 0, 30);
+        // this.graphics.drawCircle(0,0,30);
+        _this.graphics.drawCircle(0, 0, 50);
         _this.graphics.endFill();
         _this.init(x, y);
         return _this;
+        // this._animation.
     }
     PlayerObject.prototype.init = function (x, y) {
         this.positionX = x;
@@ -64,6 +66,10 @@ var PlayerObject = (function (_super) {
     PlayerObject.prototype.updateFrame = function () {
         this.excuteTurn();
         this.moving();
+    };
+    PlayerObject.prototype.reset = function () {
+        this.positionX = 0;
+        this.positionY = 0;
     };
     return PlayerObject;
 }(egret.Sprite));

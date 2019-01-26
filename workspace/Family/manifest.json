@@ -22,6 +22,7 @@
 		"bin-debug/model/player/PlayerVo.js",
 		"bin-debug/model/roles/ModelRoles.js",
 		"bin-debug/model/roles/ModelRolesEvent.js",
+		"bin-debug/model/roles/RoleType.js",
 		"bin-debug/model/roles/RoleVo.js",
 		"bin-debug/module/GameModule.js",
 		"bin-debug/module/mainUI/ModuleMainUI.js",

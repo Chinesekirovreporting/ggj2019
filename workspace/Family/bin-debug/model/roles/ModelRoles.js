@@ -21,7 +21,7 @@ var ModelRoles = (function (_super) {
     };
     ModelRoles.prototype.removeRole = function (roleVo) {
         this.rolesList.splice(this.rolesList.indexOf(roleVo));
-        this.dispatchEventWith(ModelRolesEvent.ON_ADD_ROLE, false, roleVo);
+        this.dispatchEventWith(ModelRolesEvent.ON_REMOVE_ROLE, false, roleVo);
     };
     ModelRoles.prototype.changeRolePos = function (roleVo, positionX, positionY) {
         roleVo.setPosition(positionX, positionY);

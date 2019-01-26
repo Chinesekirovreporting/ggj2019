@@ -32,6 +32,10 @@ var Role = (function () {
     };
     Role.prototype.hiting = function () {
     };
+    Role.prototype.reset = function () {
+        this.roleVo.reset();
+        this.roleObject.reset();
+    };
     return Role;
 }());
 __reflect(Role.prototype, "Role");

@@ -8,6 +8,10 @@ var PlayerVo = (function () {
         this.positionX = positionX;
         this.positionY = positionY;
     };
+    PlayerVo.prototype.reset = function () {
+        this.positionX = 0;
+        this.positionY = 0;
+    };
     return PlayerVo;
 }());
 __reflect(PlayerVo.prototype, "PlayerVo");

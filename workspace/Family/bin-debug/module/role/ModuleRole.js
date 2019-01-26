@@ -29,6 +29,7 @@ var ModuleRole = (function () {
     ModuleRole.prototype.onAddRole = function (event) {
         var roleVo = event.data;
         var roleObject = new RoleObject(roleVo.positionX, roleVo.positionY);
+        roleVo.spriteID = roleObject.spriteID;
         var role = new Role();
         role.roleVo = roleVo;
         role.roleObject = roleObject;
@@ -38,7 +39,7 @@ var ModuleRole = (function () {
     };
     ModuleRole.prototype.onRemoveRole = function (event) {
         var roleVo = event.data;
-        var roleObject = this.objectDict[roleObject.spriteID];
+        var roleObject = this.objectDict[roleVo.spriteID];
         RoleManager.inst.removeRole(RoleManager.inst.roleDict[roleObject.spriteID]);
         this.objectMapViews.removeChild(roleObject);
     };

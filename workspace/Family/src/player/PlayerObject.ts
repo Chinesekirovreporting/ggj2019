@@ -2,8 +2,9 @@ class PlayerObject extends egret.Sprite{
 
 	// 自我属性
 	private _data:egret.Bitmap;//形状
+	private _animation:fairygui.GMovieClip;
 	private _direction:number;//方向
-	private _speed:number;//速度
+	public _speed:number;//速度
 	// 场景属性
 	public positionX:number;
 	public positionY:number;
@@ -11,13 +12,14 @@ class PlayerObject extends egret.Sprite{
 	public turnLeftOn:boolean = false;
 	public turnRightOn:boolean = false;
 	
-
 	public constructor(x:number,y:number) {
 		super();
 		this.graphics.beginFill(0x00ff00);
-		this.graphics.drawCircle(0,0,30);
+		// this.graphics.drawCircle(0,0,30);
+		this.graphics.drawCircle(0,0,50);
 		this.graphics.endFill();
 		this.init(x,y);
+		// this._animation.
 	}
 
 	private init(x:number, y:number):void {
@@ -29,7 +31,7 @@ class PlayerObject extends egret.Sprite{
 		this.setDirection(rotation + 90);
 		this._speed = 5;
 	}
-	
+
 	/**
 	 * 0点顺时针
 	 */
@@ -38,9 +40,9 @@ class PlayerObject extends egret.Sprite{
 	}
 
 	public excuteTurn():void {
-		if(this.turnLeftOn) {
+		if (this.turnLeftOn) {
 			this.rotation--;
-		}else if(this.turnRightOn) {
+		} else if (this.turnRightOn) {
 			this.rotation++;
 		}
 	}
@@ -68,5 +70,10 @@ class PlayerObject extends egret.Sprite{
 	public updateFrame():void {
 		this.excuteTurn();
 		this.moving();
+	}
+
+	public reset():void {
+		this.positionX = 0;
+		this.positionY = 0;
 	}
 }

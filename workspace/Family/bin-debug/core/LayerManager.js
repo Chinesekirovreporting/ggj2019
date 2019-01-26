@@ -10,12 +10,14 @@ var LayerManager = (function () {
         LayerManager.roles = new egret.Sprite();
         LayerManager.player = new egret.Sprite();
         LayerManager.base = new egret.Sprite();
+        LayerManager.mainUI = new egret.Sprite();
         LayerManager.ui = new egret.Sprite();
         LayerManager.root.addChild(LayerManager.map);
         LayerManager.root.addChild(LayerManager.roles);
         LayerManager.root.addChild(LayerManager.player);
         LayerManager.root.addChild(LayerManager.ui);
         LayerManager.root.addChild(LayerManager.base);
+        LayerManager.root.addChild(LayerManager.mainUI);
         LayerManager.ui.addChild(fairygui.GRoot.inst.displayObject);
     };
     return LayerManager;

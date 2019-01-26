@@ -34,6 +34,7 @@ class ModuleRole {
 	private onAddRole(event:egret.Event):void {
 		var roleVo:RoleVo = event.data;
 		var roleObject:RoleObject = new RoleObject(roleVo.positionX,roleVo.positionY);
+		roleVo.spriteID = roleObject.spriteID;
 		var role:Role = new Role();
 		role.roleVo = roleVo;
 		role.roleObject = roleObject;
@@ -44,7 +45,7 @@ class ModuleRole {
 
 	private onRemoveRole(event:egret.Event):void {
 		var roleVo:RoleVo = event.data;
-		var roleObject:RoleObject = this.objectDict[roleObject.spriteID];
+		var roleObject:RoleObject = this.objectDict[roleVo.spriteID];
 		RoleManager.inst.removeRole(RoleManager.inst.roleDict[roleObject.spriteID]);
 		this.objectMapViews.removeChild(roleObject);
 	}

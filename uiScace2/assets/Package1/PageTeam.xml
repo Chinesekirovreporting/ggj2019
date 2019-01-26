@@ -2,8 +2,8 @@
 <component size="1136,640">
   <displayList>
     <graph id="n0_jei6" name="n0" xy="0,0" size="1136,640" type="rect"/>
-    <text id="n1_jei6" name="n1" xy="408,36" size="285,148" fontSize="65" text="30组 云汉&#xA;小组成员&#xA;"/>
-    <text id="n2_jei6" name="n2" xy="96,200" size="948,336" fontSize="65" autoSize="none" text="黄文皓     何嘉乐       小未&#xA;苏魁         蒋之兼       橘子&#xA;石雨哲     赵宇杰&#xA;"/>
+    <text id="n1_jei6" name="n1" xy="408,36" size="290,150" fontSize="65" text="30组 云汉&#xA;小组成员&#xA;"/>
+    <text id="n2_jei6" name="n2" xy="94,198" size="948,336" fontSize="65" autoSize="none" text="黄文皓     何嘉乐       小未&#xA;苏魁         蒋之兼       橘子&#xA;石雨哲     赵宇杰&#xA;"/>
     <component id="n3_jei6" name="btnReturn" src="jei63" fileName="BtnReturn.xml" xy="392,512"/>
   </displayList>
 </component>
