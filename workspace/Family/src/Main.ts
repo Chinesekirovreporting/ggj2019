@@ -71,6 +71,17 @@ class Main extends egret.DisplayObjectContainer {
         // 初始化引擎
         GameModel.init();
         GameModule.init();
+        this.showGame();
+    }
+
+    private showGame():void {
+        GameModule.role.onShow();
+        GameModule.scene.onShow();
+    }
+
+    private exitGame():void {
+        GameModule.role.onExit();
+        GameModule.scene.onExit();
     }
 
     private textfield: egret.TextField;
