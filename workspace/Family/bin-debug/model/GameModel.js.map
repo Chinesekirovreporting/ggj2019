@@ -1,0 +1,1 @@
+{"version":3,"file":"GameModel.js","sourceRoot":"","sources":["../../src/model/GameModel.ts"],"names":[],"mappings":";;;AAAA;IAAA;IAUA,CAAC;IALc,cAAI,GAAlB;QACC,8BAA8B;QAC9B,IAAI,CAAC,MAAM,GAAG,IAAI,WAAW,EAAE,CAAC;QAChC,IAAI,CAAC,KAAK,GAAG,IAAI,UAAU,EAAE,CAAC;IAC/B,CAAC;IACF,gBAAC;AAAD,CAAC,AAVD,IAUC;AAVK,UAAA,SAAS,wBAUd,CAAA"}

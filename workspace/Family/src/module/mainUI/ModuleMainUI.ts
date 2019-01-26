@@ -1,0 +1,4 @@
+class ModuleMainUI {
+	public constructor() {
+	}
+}
