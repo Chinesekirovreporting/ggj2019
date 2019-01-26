@@ -28,6 +28,10 @@ var Role = (function () {
     Role.prototype.updateFrame = function () {
         this.roleObject.updateFrame();
     };
+    Role.prototype.testHit = function () {
+    };
+    Role.prototype.hiting = function () {
+    };
     return Role;
 }());
 __reflect(Role.prototype, "Role");

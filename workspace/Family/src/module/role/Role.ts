@@ -20,4 +20,12 @@ class Role {
 	public updateFrame():void {
 		this.roleObject.updateFrame();
 	}
+
+	public testHit():void {
+
+	}
+
+	public hiting():void {
+
+	}
 }

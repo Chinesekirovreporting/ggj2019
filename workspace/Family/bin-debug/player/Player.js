@@ -36,6 +36,10 @@ var Player = (function () {
             this.playerObject.turnRightOn = true;
         }
     };
+    Player.prototype.textHit = function () {
+    };
+    Player.prototype.hiting = function () {
+    };
     return Player;
 }());
 __reflect(Player.prototype, "Player");

@@ -35,4 +35,12 @@ class Player {
 			this.playerObject.turnRightOn = true;
 		}
 	}
+
+	public textHit():void {
+
+	}
+
+	public hiting():void {
+		
+	}
 }

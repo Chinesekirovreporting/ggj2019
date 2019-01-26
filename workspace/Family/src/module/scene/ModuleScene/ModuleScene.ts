@@ -1,4 +1,5 @@
 class ModuleScene extends egret.EventDispatcher {
+	public baseObject:BaseObject
 
 	public idTimeout:number;
 	public timer:egret.Timer = new egret.Timer(1000, Number.MAX_VALUE);
@@ -6,10 +7,12 @@ class ModuleScene extends egret.EventDispatcher {
 	public constructor() {
 		super();
 		this.createPlayer();
+		this.createBase();
 	}
 	
 	public onShow():void {
 		LayerManager.player.addChild(PlayerManager.inst.player.playerObject);
+		LayerManager.base.addChild(this.baseObject);
 		GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS,this.onChangePLayer,this);
 		Root.root.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame,this);
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimeFunc, this);
@@ -28,6 +31,10 @@ class ModuleScene extends egret.EventDispatcher {
 		PlayerManager.inst.setPlayer(player);
 	}
 
+	private createBase():void {
+		this.baseObject = new BaseObject();
+	}
+
 	private addRole(positionX:number,positionY:number):void {
 		var roleVo:RoleVo = new RoleVo();
 		roleVo.setPosition(positionX, positionY);
@@ -40,6 +47,7 @@ class ModuleScene extends egret.EventDispatcher {
 
 	public onExit():void {
 		LayerManager.player.removeChild(PlayerManager.inst.player.playerObject);
+		LayerManager.base.removeChild(this.baseObject);
 		GameModel.player.removeEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS,this.onChangePLayer,this);
 		Root.root.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
 		egret.clearTimeout(this.idTimeout);
@@ -53,5 +61,6 @@ class ModuleScene extends egret.EventDispatcher {
 	private onEnterFrame(event:egret.Event):void {
 		PlayerManager.inst.updateFrame();
 		RoleManager.inst.updateFrame();
+		this.baseObject.updateFrame();
 	}
 }

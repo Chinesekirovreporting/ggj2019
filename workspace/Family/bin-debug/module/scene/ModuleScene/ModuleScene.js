@@ -14,10 +14,12 @@ var ModuleScene = (function (_super) {
         var _this = _super.call(this) || this;
         _this.timer = new egret.Timer(1000, Number.MAX_VALUE);
         _this.createPlayer();
+        _this.createBase();
         return _this;
     }
     ModuleScene.prototype.onShow = function () {
         LayerManager.player.addChild(PlayerManager.inst.player.playerObject);
+        LayerManager.base.addChild(this.baseObject);
         GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePLayer, this);
         Root.root.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
         this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimeFunc, this);
@@ -34,6 +36,9 @@ var ModuleScene = (function (_super) {
         player.playerVo = playerVo;
         PlayerManager.inst.setPlayer(player);
     };
+    ModuleScene.prototype.createBase = function () {
+        this.baseObject = new BaseObject();
+    };
     ModuleScene.prototype.addRole = function (positionX, positionY) {
         var roleVo = new RoleVo();
         roleVo.setPosition(positionX, positionY);
@@ -44,6 +49,7 @@ var ModuleScene = (function (_super) {
     };
     ModuleScene.prototype.onExit = function () {
         LayerManager.player.removeChild(PlayerManager.inst.player.playerObject);
+        LayerManager.base.removeChild(this.baseObject);
         GameModel.player.removeEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePLayer, this);
         Root.root.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
         egret.clearTimeout(this.idTimeout);
@@ -55,6 +61,7 @@ var ModuleScene = (function (_super) {
     ModuleScene.prototype.onEnterFrame = function (event) {
         PlayerManager.inst.updateFrame();
         RoleManager.inst.updateFrame();
+        this.baseObject.updateFrame();
     };
     return ModuleScene;
 }(egret.EventDispatcher));

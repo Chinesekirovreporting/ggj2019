@@ -29,6 +29,7 @@ class PlayerObject extends egret.Sprite{
 		this.setDirection(rotation + 90);
 		this._speed = 5;
 	}
+	
 	/**
 	 * 0点顺时针
 	 */
