@@ -121,6 +121,7 @@ var Main = (function (_super) {
         });
     };
     Main.prototype.initGame = function () {
+        this.stage.orientation = egret.OrientationMode.LANDSCAPE;
         fairygui.UIPackage.addPackage("Package1_fui");
         fairygui.UIPackage.addPackage("joystick_fui");
         var dbConfig = RES.getRes("dbConfig_json");

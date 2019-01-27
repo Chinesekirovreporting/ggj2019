@@ -14,6 +14,9 @@ var ModuleMainUI = (function () {
     ModuleMainUI.prototype.onRestart = function () {
         GameModule.scene.resetScene();
         this.btnRestart.visible = false;
+        egret.setTimeout(function () {
+            PlayerManager.inst.player.playerObject._speed = 5;
+        }, this, 3000);
     };
     ModuleMainUI.prototype.onShow = function () {
         LayerManager.mainUI.addChild(this.mainUI.displayObject);

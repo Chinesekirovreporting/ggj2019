@@ -19,6 +19,8 @@ var ModuleScene = (function (_super) {
         return _this;
     }
     ModuleScene.prototype.onShow = function () {
+        var bg = new egret.Bitmap(RES.getRes("img_bg_png"));
+        LayerManager.map.addChild(bg);
         LayerManager.player.addChild(PlayerManager.inst.player.playerObject);
         LayerManager.base.addChild(this.baseObject);
         GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePLayer, this);
@@ -53,9 +55,12 @@ var ModuleScene = (function (_super) {
         for (var i = 0; i < num; i++) {
             x = Math.random() * maxX - maxX / 2;
             y = Math.random() * maxY - maxY / 2;
-            var roleVo = new RoleVo();
-            roleVo.setPosition(x, y);
-            GameModel.roles.addRole(roleVo);
+            if (Math.abs(PlayerManager.inst.player.positionX - x) < 500 &&
+                Math.abs(PlayerManager.inst.player.positionY - y) < 500) {
+                var roleVo = new RoleVo();
+                roleVo.setPosition(x, y);
+                GameModel.roles.addRole(roleVo);
+            }
         }
     };
     ModuleScene.prototype.createBase = function () {
@@ -71,6 +76,7 @@ var ModuleScene = (function (_super) {
     };
     ModuleScene.prototype.onExit = function () {
         LayerManager.player.removeChild(PlayerManager.inst.player.playerObject);
+        LayerManager.map.removeChildren();
         LayerManager.base.removeChild(this.baseObject);
         GameModel.player.removeEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePLayer, this);
         Root.root.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
@@ -89,6 +95,7 @@ var ModuleScene = (function (_super) {
     ModuleScene.prototype.resetScene = function () {
         PlayerManager.inst.reset();
         RoleManager.inst.reset();
+        GameModule.role.reset();
         this.createBalls(50);
     };
     return ModuleScene;

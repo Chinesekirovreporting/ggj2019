@@ -62,6 +62,9 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private initGame():void {
+
+        this.stage.orientation = egret.OrientationMode.LANDSCAPE;
+
         fairygui.UIPackage.addPackage("Package1_fui");
         fairygui.UIPackage.addPackage("joystick_fui");
 

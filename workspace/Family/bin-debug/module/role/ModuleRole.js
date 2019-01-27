@@ -50,6 +50,9 @@ var ModuleRole = (function () {
     };
     ModuleRole.prototype.onChangePlayerPos = function (event) {
     };
+    ModuleRole.prototype.reset = function () {
+        this.objectMapViews.removeChildren();
+    };
     return ModuleRole;
 }());
 __reflect(ModuleRole.prototype, "ModuleRole");
