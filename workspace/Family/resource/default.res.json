@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "egret_icon_png,description_json,Package1_fui,joystick_fui_atlas0,joystick_fui,player_ske_json,player_tex_json,player_tex_png,dbConfig_json,Package1_fui_atlas0,bg2_jpg,homeSpace_tex_json,homeSpace_tex_png,homeSpace_ske_json,喷气_wav,更大声的喷火_wav,喷火推进_mp3,img_stone_4_png,img_stone_5_png,img_stone_6_png,img_stone_7_png,img_stone_8_png,img_stone_9_png,img_stone_10_png,img_stone_11_png,img_stone_12_png,img_stone_13_png,img_stone_14_png,img_stone_15_png,img_stone_16_png,img_stone_17_png,img_stone_18_png,img_stone_19_png,img_stone_1_png,img_stone_2_png,img_stone_3_png,img_score_png,img_oxy_png",
+			"keys": "egret_icon_png,description_json,Package1_fui,joystick_fui_atlas0,joystick_fui,player_ske_json,player_tex_json,player_tex_png,dbConfig_json,Package1_fui_atlas0,bg2_jpg,homeSpace_tex_json,homeSpace_tex_png,homeSpace_ske_json,喷气_wav,更大声的喷火_wav,喷火推进_mp3,img_stone_4_png,img_stone_5_png,img_stone_6_png,img_stone_7_png,img_stone_8_png,img_stone_9_png,img_stone_10_png,img_stone_11_png,img_stone_12_png,img_stone_13_png,img_stone_14_png,img_stone_15_png,img_stone_16_png,img_stone_17_png,img_stone_18_png,img_stone_19_png,img_stone_1_png,img_stone_2_png,img_stone_3_png,img_score_png,img_oxy_png,img_team_png",
 			"name": "preload"
 		}
 	],
@@ -195,6 +195,11 @@
 			"url": "assets/img_oxy.png",
 			"type": "image",
 			"name": "img_oxy_png"
+		},
+		{
+			"url": "assets/img_team.png",
+			"type": "image",
+			"name": "img_team_png"
 		}
 	]
 }
