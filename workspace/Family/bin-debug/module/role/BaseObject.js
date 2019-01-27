@@ -12,9 +12,9 @@ var BaseObject = (function (_super) {
     __extends(BaseObject, _super);
     function BaseObject() {
         var _this = _super.call(this) || this;
-        _this.graphics.beginFill(0x123456);
-        _this.graphics.drawCircle(0, 0, 50);
-        _this.graphics.endFill();
+        // this.graphics.beginFill(0x123456);
+        // this.graphics.drawCircle(0,0,50);
+        // this.graphics.endFill();
         _this.initBase();
         return _this;
     }

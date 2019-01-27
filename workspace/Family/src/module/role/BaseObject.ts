@@ -4,9 +4,9 @@ class BaseObject extends egret.Sprite {
 
 	public constructor() {
 		super();
-		this.graphics.beginFill(0x123456);
-		this.graphics.drawCircle(0,0,50);
-		this.graphics.endFill();
+		// this.graphics.beginFill(0x123456);
+		// this.graphics.drawCircle(0,0,50);
+		// this.graphics.endFill();
 		this.initBase();
 	}
 

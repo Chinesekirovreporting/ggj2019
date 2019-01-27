@@ -64,7 +64,7 @@ var ModuleScene = (function (_super) {
         }
     };
     ModuleScene.prototype.createBase = function () {
-        this.baseObject = new BaseObject();
+        this.baseObject = new HomeSpace();
     };
     ModuleScene.prototype.addRole = function (positionX, positionY) {
         var roleVo = new RoleVo();

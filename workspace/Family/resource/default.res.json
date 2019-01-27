@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "egret_icon_png,description_json,Package1_fui,joystick_fui_atlas0,joystick_fui,player_ske_json,player_tex_json,player_tex_png,dbConfig_json,Package1_fui_atlas0,bg2_jpg",
+			"keys": "egret_icon_png,description_json,Package1_fui,joystick_fui_atlas0,joystick_fui,player_ske_json,player_tex_json,player_tex_png,dbConfig_json,Package1_fui_atlas0,bg2_jpg,homeSpace_tex_json,homeSpace_tex_png,homeSpace_ske_json,喷气_wav,更大声的喷火_wav,喷火推进_mp3",
 			"name": "preload"
 		}
 	],
@@ -60,6 +60,36 @@
 			"name": "bg2_jpg",
 			"type": "image",
 			"url": "assets/bg2.jpg"
+		},
+		{
+			"name": "homeSpace_tex_json",
+			"type": "json",
+			"url": "assets/db/homeSpace_tex.json"
+		},
+		{
+			"name": "homeSpace_tex_png",
+			"type": "image",
+			"url": "assets/db/homeSpace_tex.png"
+		},
+		{
+			"name": "homeSpace_ske_json",
+			"type": "json",
+			"url": "assets/db/homeSpace_ske.json"
+		},
+		{
+			"name": "喷气_wav",
+			"type": "sound",
+			"url": "assets/sounds/喷气.wav"
+		},
+		{
+			"name": "更大声的喷火_wav",
+			"type": "sound",
+			"url": "assets/sounds/更大声的喷火.wav"
+		},
+		{
+			"name": "喷火推进_mp3",
+			"type": "sound",
+			"url": "assets/sounds/喷火推进.mp3"
 		}
 	]
 }

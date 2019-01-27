@@ -21,8 +21,6 @@ var LayerManager = (function () {
         LayerManager.root.addChild(LayerManager.base);
         LayerManager.root.addChild(LayerManager.mainUI);
         LayerManager.ui.addChild(fairygui.GRoot.inst.displayObject);
-        // LayerManager.root.rotation = 90
-        // LayerManager.root.x = 640;
     };
     return LayerManager;
 }());

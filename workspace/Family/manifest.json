@@ -11,8 +11,8 @@
 		"libs/fairygui/fairygui.js"
 	],
 	"game": [
-		"bin-debug/module/scene/PageBase.js",
 		"bin-debug/module/role/BaseObject.js",
+		"bin-debug/module/scene/PageBase.js",
 		"bin-debug/Platform.js",
 		"bin-debug/core/AssetManager.js",
 		"bin-debug/core/GameSetting.js",
@@ -30,6 +30,7 @@
 		"bin-debug/module/mainUI/ModuleMainUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/module/role/DBArmature.js",
+		"bin-debug/module/role/HomeSpace.js",
 		"bin-debug/module/role/ModuleRole.js",
 		"bin-debug/module/role/Role.js",
 		"bin-debug/module/role/RoleManager.js",

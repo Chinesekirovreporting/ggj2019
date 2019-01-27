@@ -60,7 +60,7 @@ class ModuleScene extends egret.EventDispatcher {
 	}
 
 	private createBase():void {
-		this.baseObject = new BaseObject();
+		this.baseObject = new HomeSpace();
 	}
 
 	private addRole(positionX:number,positionY:number):void {
