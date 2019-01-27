@@ -50,13 +50,22 @@ class ModuleScene extends egret.EventDispatcher {
 		for(var i = 0; i < num; i++) {
 			x = Math.random() * maxX - maxX/2;
 			y = Math.random() * maxY - maxY/2;
-			if(Math.abs(PlayerManager.inst.player.positionX - x) < 500 &&
-				Math.abs(PlayerManager.inst.player.positionY - y) < 500) {
+			if(Math.abs(PlayerManager.inst.player.positionX - x) > 200 &&
+				Math.abs(PlayerManager.inst.player.positionY - y) > 200) {
 				var roleVo:RoleVo = new RoleVo();
 				roleVo.setPosition(x,y);
 				GameModel.roles.addRole(roleVo);
 			}
 		}
+	}
+
+	private createScore(ballVo:RoleVo):void {
+		var scoreVo:RoleVo = new RoleVo();
+		scoreVo.roleType = 3;
+		var x:number = ballVo.positionX + 50 + Math.random() * 100;
+		var y:number = ballVo.positionY + 50 + Math.random() * 100;
+		scoreVo.setPosition(x,y);
+		GameModel.roles.addRole(scoreVo);
 	}
 
 	private createBase():void {

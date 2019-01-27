@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="158,609" overflow="scroll" extention="ProgressBar">
+  <displayList>
+    <image id="n0_9feg" name="n0" src="9feg9" fileName="Images/progress.png" xy="0,0" size="158,609" aspect="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_9feg" name="bar" src="9feg8" fileName="Images/progressBar.png" xy="85,558" size="58,390" aspect="true" scale="1,-1" flip="vt" fillMethod="vt"/>
+  </displayList>
+  <ProgressBar reverse="true"/>
+</component>
