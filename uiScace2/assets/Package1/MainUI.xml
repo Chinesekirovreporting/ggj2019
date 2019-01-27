@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1136,640" opaque="false">
   <displayList>
-    <text id="n0_9feg" name="n0" xy="24,15" size="93,39" fontSize="30" color="#ffffff" text="积分："/>
-    <text id="n2_9feg" name="lblScore" xy="142,14" size="90,40" fontSize="30" color="#ffffff" autoSize="none" text="99999&#xA;"/>
-    <text id="n6_9feg" name="n6" xy="24,65" size="93,40" fontSize="30" color="#ffffff" text="坐标：&#xA;"/>
-    <text id="n7_9feg" name="lblPos" xy="142,65" size="307,41" fontSize="30" color="#ffffff" autoSize="none" text="99999&#xA;"/>
+    <text id="n0_9feg" name="n0" xy="24,15" size="111,39" fontSize="30" color="#ffffff" text="Score："/>
+    <text id="n2_9feg" name="lblScore" xy="173,14" size="90,40" fontSize="30" color="#ffffff" autoSize="none" text="99999&#xA;"/>
+    <text id="n6_9feg" name="n6" xy="24,65" size="142,39" fontSize="30" color="#ffffff" autoSize="none" text="Position："/>
+    <text id="n7_9feg" name="lblPos" xy="173,63" size="307,41" fontSize="30" color="#ffffff" autoSize="none" text="99999&#xA;"/>
     <component id="n8_9feg" name="btnRestart" src="9feg7" fileName="BtnRestart.xml" xy="418,270"/>
     <component id="n15_m6j5" name="hpBar" src="jklra" fileName="HPBar.xml" xy="1034,2">
       <ProgressBar value="51" max="100"/>

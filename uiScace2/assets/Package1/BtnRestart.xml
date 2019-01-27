@@ -2,11 +2,7 @@
 <component size="300,100" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
-    <graph id="n3_9feg" name="n3" xy="0,0" size="300,100" touchable="false" type="rect" lineSize="0" fillColor="#fff0f0f0">
-      <gearDisplay controller="button" pages="0"/>
-      <relation target="" sidePair="width-width,height-height"/>
-    </graph>
-    <text id="n4_9feg" name="n4" xy="87,23" size="107,61" fontSize="50" text="重开"/>
+    <image id="n5_m6j5" name="n5" src="m6j5n" fileName="restart.png" xy="-3,-100"/>
   </displayList>
   <Button/>
 </component>
