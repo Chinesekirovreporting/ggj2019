@@ -37,6 +37,7 @@ class ModuleScene extends egret.EventDispatcher {
 		var player:Player = new Player();
 		player.playerObject = playerObject;
 		player.playerVo = playerVo;
+		playerVo.isAlive = true;
 		PlayerManager.inst.setPlayer(player);
 	}
 
@@ -95,6 +96,13 @@ class ModuleScene extends egret.EventDispatcher {
 	private onTimeFunc():void {
 		// this.addRole();
 		GameModule.mainUI.onChangePos();
+		if(PlayerManager.inst.player.playerVo.isAlive) {
+			PlayerManager.inst.player.playerVo.oxygen -= 2;
+			GameModule.mainUI.showProgress(PlayerManager.inst.player.playerVo.oxygen);
+		}
+		if(PlayerManager.inst.player.playerVo.oxygen <= 0) {
+			PlayerManager.inst.player.killPlayer();
+		}
 	}
 
 	private onEnterFrame(event:egret.Event):void {

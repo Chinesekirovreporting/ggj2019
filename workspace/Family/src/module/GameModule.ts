@@ -26,7 +26,7 @@ class GameModule {
 		GameModule.role.onShow();
         GameModule.scene.onShow();
 		GameModule.mainUI.onShow();
-        GameModule.joystick.show();
+        // GameModule.joystick.show();
 	}
 
 	public static showTitle(): void {

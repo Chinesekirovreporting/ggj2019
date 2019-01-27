@@ -1,5 +1,5 @@
 class RoleVo {
-	private _isAlive:boolean;
+	public _isAlive:boolean;
 	public positionX :number;
 	public positionY:number;
 

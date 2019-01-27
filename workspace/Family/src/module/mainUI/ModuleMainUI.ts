@@ -19,18 +19,21 @@ class ModuleMainUI {
 		this.btnRestart.visible = false;
 		this.btnLeft = this.mainUI.getChild("btnLeft").asButton;
 		this.btnLeft.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onBtnLeftDown,this);
-		this.btnLeft.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onBtnLeftUp,this);
+		this.btnLeft.addEventListener(egret.TouchEvent.TOUCH_END,this.onBtnLeftUp,this);
 		this.btnRight = this.mainUI.getChild("btnRight").asButton;
 		this.btnRight.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onBtnRightDown,this);
-		this.btnRight.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onBtnRightUp,this);
+		this.btnRight.addEventListener(egret.TouchEvent.TOUCH_END,this.onBtnRightUp,this);
 		this.btnSpeed = this.mainUI.getChild("btnSpeed").asButton;
 		this.btnSpeed.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onBtnSpeedDown,this);
-		this.btnSpeed.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onBtnSpeedUp,this);
+		this.btnSpeed.addEventListener(egret.TouchEvent.TOUCH_END,this.onBtnSpeedUp,this);
+		this.showProgress(80);
+		this.showPoint(0);
 	}
 
 	private onBtnLeftDown():void {
 		PlayerInput.leftDown = true;
 		PlayerInput.rightDown = false;
+		console.log("leftDownbtn",PlayerInput.leftDown);
 	}
 
 	private onBtnLeftUp():void {
@@ -60,9 +63,21 @@ class ModuleMainUI {
 		GameModule.scene.resetScene();
 
 		this.btnRestart.visible = false;
+		PlayerManager.inst.player.playerVo.oxygen = 80;
 		egret.setTimeout(() => {
-			PlayerManager.inst.player.playerObject._speed = 5;
+			PlayerManager.inst.player.playerVo.isAlive = true;
+			PlayerManager.inst.player.playerVo.points = 0;
+			this.showPoint(0);
+			
 		},this,3000)
+	}
+
+	public showProgress(value:number):void {
+		this.hpBar.value = value;
+	}
+
+	public showPoint(value:number):void {
+		this.lblScore.text = value.toString();
 	}
 	
 	public onShow():void {

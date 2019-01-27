@@ -53,9 +53,9 @@ class PlayerObject extends egret.Sprite{
 
 	public excuteTurn():void {
 		if (this.turnLeftOn) {
-			this.rotation--;
+			this.rotation -= 5;
 		} else if (this.turnRightOn) {
-			this.rotation++;
+			this.rotation += 5;
 		}
 	}
 

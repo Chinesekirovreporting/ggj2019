@@ -18,6 +18,7 @@ class Joystick extends PageBase {
         if(LayerManager.root) {
             LayerManager.root.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
         }
+        this._view.visible = false;
     }
 
     private onTouch(e: egret.TouchEvent): void {
