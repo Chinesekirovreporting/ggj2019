@@ -9,10 +9,14 @@
     <component id="9feg5" name="MainUI.xml" path="/" exported="true"/>
     <movieclip id="9feg6" name="MovieClip1.jta" path="/"/>
     <component id="9feg7" name="BtnRestart.xml" path="/"/>
-    <image id="jklr8" name="值.png" path="/"/>
-    <image id="jklr9" name="氧气瓶.png" path="/"/>
+    <image id="jklr8" name="bar.png" path="/"/>
+    <image id="jklr9" name="progress.png" path="/"/>
     <component id="jklra" name="HPBar.xml" path="/"/>
     <component id="jklrb" name="barv.xml" path="/"/>
+    <image id="i5wmc" name="abtn_Turn.png" path="/"/>
+    <image id="i5wmd" name="abtn_speed.png" path="/"/>
+    <component id="m6j5f" name="BtnLeft.xml" path="/"/>
+    <component id="m6j5g" name="BtnSpeed1.xml" path="/"/>
   </resources>
   <publish name="Package1"/>
 </packageDescription>

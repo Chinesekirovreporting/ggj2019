@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1136,640" opaque="false">
   <displayList>
-    <text id="n0_9feg" name="n0" xy="17,15" size="95,39" fontSize="30" text="积分："/>
+    <text id="n0_9feg" name="n0" xy="24,15" size="95,39" fontSize="30" text="积分："/>
     <text id="n2_9feg" name="lblScore" xy="142,14" size="90,40" fontSize="30" autoSize="none" text="99999&#xA;"/>
     <text id="n6_9feg" name="n6" xy="24,65" size="95,41" fontSize="30" text="坐标：&#xA;"/>
-    <text id="n7_9feg" name="lblPos" xy="145,65" size="307,41" fontSize="30" autoSize="none" text="99999&#xA;"/>
+    <text id="n7_9feg" name="lblPos" xy="142,65" size="307,41" fontSize="30" autoSize="none" text="99999&#xA;"/>
     <component id="n8_9feg" name="btnRestart" src="9feg7" fileName="BtnRestart.xml" xy="418,270"/>
-    <component id="n14_jnw0" name="hpBar" src="9fega" fileName="ProgressBar1.xml" xy="978,5" touchable="false">
-      <ProgressBar value="50" max="100"/>
+    <component id="n15_m6j5" name="hpBar" src="jklra" fileName="HPBar.xml" xy="1034,2">
+      <ProgressBar value="51" max="100"/>
     </component>
-    <image id="n15_jnw0" name="btnLeft" src="jnw0b" fileName="abtn_Turn.png" xy="13,458"/>
-    <image id="n16_jnw0" name="btnRight" src="jnw0b" fileName="abtn_Turn.png" xy="529,458" scale="-1,1"/>
-    <image id="n17_jnw0" name="btnSpeed" src="jnw0c" fileName="abtn_speed.png" xy="586,386"/>
+    <component id="n16_m6j5" name="btnLeft" src="m6j5f" fileName="BtnLeft.xml" xy="30,441"/>
+    <component id="n17_m6j5" name="btnRight" src="m6j5f" fileName="BtnLeft.xml" xy="315,441" scale="-1,1"/>
+    <component id="n18_m6j5" name="btnSpeed" src="m6j5g" fileName="BtnSpeed1.xml" xy="716,377"/>
   </displayList>
 </component>
