@@ -54,7 +54,7 @@ class Player {
 		for(var key in objects) {
 			role = objects[key];
 			if((role.positionX - this.positionX)*(role.positionX - this.positionX) + 
-			(role.positionY - this.positionY) * (role.positionY - this.positionY) < 150*150) {
+			(role.positionY - this.positionY) * (role.positionY - this.positionY) < 40*40) {
 				if(role.roleVo.roleType == 1) {
 					this.playerHiting();
 				}else if(role.roleVo.roleType == 3){
