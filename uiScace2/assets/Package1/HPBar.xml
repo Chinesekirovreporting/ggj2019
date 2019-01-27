@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="102,377" overflow="hidden" extention="ProgressBar">
+  <displayList>
+    <component id="n1_jklr" name="bar_v" src="jklrb" fileName="barv.xml" xy="84,354" aspect="true" scale="0.3,0.3" rotation="180"/>
+    <image id="n2_jklr" name="n2" src="jklr9" fileName="氧气瓶.png" xy="0,0" aspect="true" scale="0.3,0.3"/>
+  </displayList>
+  <ProgressBar/>
+</component>

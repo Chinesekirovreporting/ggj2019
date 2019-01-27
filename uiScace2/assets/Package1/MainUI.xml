@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1136,640" opaque="false">
   <displayList>
-    <text id="n0_9feg" name="n0" xy="921,86" size="93,39" fontSize="30" text="积分："/>
-    <text id="n1_9feg" name="n1" xy="921,147" size="93,40" fontSize="30" text="时间：&#xA;"/>
+    <text id="n0_9feg" name="n0" xy="921,86" size="95,38" fontSize="30" text="积分："/>
+    <text id="n1_9feg" name="n1" xy="921,147" size="95,40" fontSize="30" text="时间：&#xA;"/>
     <text id="n2_9feg" name="lblScore" xy="1046,85" size="90,40" fontSize="30" autoSize="none" text="99999&#xA;"/>
-    <text id="n3_9feg" name="lblTime" xy="1046,146" size="90,41" fontSize="30" text="99999&#xA;"/>
-    <text id="n4_9feg" name="n4" xy="921,22" size="123,39" fontSize="30" text="最高分："/>
+    <text id="n3_9feg" name="lblTime" xy="1046,146" size="88,40" fontSize="30" text="99999&#xA;"/>
+    <text id="n4_9feg" name="n4" xy="921,22" size="125,38" fontSize="30" text="最高分："/>
     <text id="n5_9feg" name="lblMaxScore" xy="1046,21" size="90,40" fontSize="30" autoSize="none" text="99999&#xA;"/>
-    <text id="n6_9feg" name="" xy="718,206" size="93,40" fontSize="30" text="坐标：&#xA;"/>
+    <text id="n6_9feg" name="n6" xy="718,206" size="95,40" fontSize="30" text="坐标：&#xA;"/>
     <text id="n7_9feg" name="lblPos" xy="828,206" size="307,41" fontSize="30" autoSize="none" text="99999&#xA;"/>
     <component id="n8_9feg" name="btnRestart" src="9feg7" fileName="BtnRestart.xml" xy="418,270"/>
+    <component id="n12_jklr" name="hpBar" src="jklra" fileName="HPBar.xml" xy="8,4">
+      <ProgressBar value="50" max="100"/>
+    </component>
   </displayList>
 </component>

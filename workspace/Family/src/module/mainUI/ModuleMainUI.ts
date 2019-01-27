@@ -3,18 +3,21 @@ class ModuleMainUI {
 	public lblScore:fairygui.GTextField;
 	public lblPos:fairygui.GTextField;
 	public btnRestart:fairygui.GButton;
+	public hpBar:fairygui.GProgressBar;
 
 	public constructor() {
 		this.mainUI = fairygui.UIPackage.createObject("Package1","MainUI").asCom;
 		this.lblScore = this.mainUI.getChild("lblScore").asTextField;
 		this.lblPos = this.mainUI.getChild("lblPos").asTextField;
 		this.btnRestart = this.mainUI.getChild("btnRestart").asButton;
+		this.hpBar = this.mainUI.getChild("hpBar").asProgress;
 		this.btnRestart.addClickListener(this.onRestart,this);
 		this.btnRestart.visible = false;
 	}
 
 	private onRestart():void {
 		GameModule.scene.resetScene();
+
 		this.btnRestart.visible = false;
 	}
 	

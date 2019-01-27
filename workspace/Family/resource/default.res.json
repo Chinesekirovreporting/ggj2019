@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,Package1_fui,joystick_fui_atlas0,joystick_fui,player_ske_json,player_tex_json,player_tex_png,dbConfig_json",
+			"keys": "bg_jpg,egret_icon_png,description_json,Package1_fui,joystick_fui_atlas0,joystick_fui,player_ske_json,player_tex_json,player_tex_png,dbConfig_json,Package1_fui_atlas0",
 			"name": "preload"
 		}
 	],
@@ -52,9 +52,14 @@
 			"name": "player_tex_png"
 		},
 		{
-			"name": "dbConfig_json",
+			"url": "config/dbConfig.json",
 			"type": "json",
-			"url": "config/dbConfig.json"
+			"name": "dbConfig_json"
+		},
+		{
+			"url": "assets/fui/Package1_atlas0.png",
+			"type": "image",
+			"name": "Package1_fui_atlas0"
 		}
 	]
 }

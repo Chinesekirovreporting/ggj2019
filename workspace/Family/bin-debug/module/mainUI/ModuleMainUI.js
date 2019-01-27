@@ -7,6 +7,7 @@ var ModuleMainUI = (function () {
         this.lblScore = this.mainUI.getChild("lblScore").asTextField;
         this.lblPos = this.mainUI.getChild("lblPos").asTextField;
         this.btnRestart = this.mainUI.getChild("btnRestart").asButton;
+        this.hpBar = this.mainUI.getChild("hpBar").asProgress;
         this.btnRestart.addClickListener(this.onRestart, this);
         this.btnRestart.visible = false;
     }
@@ -15,7 +16,8 @@ var ModuleMainUI = (function () {
         this.btnRestart.visible = false;
     };
     ModuleMainUI.prototype.onShow = function () {
-        LayerManager.mainUI.addChild(this.mainUI.displayObject);
+        fairygui.GRoot.inst.addChild(this.mainUI);
+        // LayerManager.mainUI.addChild(this.mainUI.displayObject);
         GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePos, this);
     };
     ModuleMainUI.prototype.onChangePos = function () {
