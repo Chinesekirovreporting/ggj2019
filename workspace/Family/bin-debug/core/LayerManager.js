@@ -12,6 +12,8 @@ var LayerManager = (function () {
         LayerManager.base = new egret.Sprite();
         LayerManager.mainUI = new egret.Sprite();
         LayerManager.ui = new egret.Sprite();
+        LayerManager.bgLayer = new egret.DisplayObjectContainer();
+        LayerManager.root.addChild(LayerManager.bgLayer);
         LayerManager.root.addChild(LayerManager.map);
         LayerManager.root.addChild(LayerManager.roles);
         LayerManager.root.addChild(LayerManager.player);

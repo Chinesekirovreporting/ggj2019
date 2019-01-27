@@ -3,9 +3,10 @@ class ModuleScene extends egret.EventDispatcher {
 
 	public idTimeout:number;
 	public timer:egret.Timer = new egret.Timer(1000, Number.MAX_VALUE);
-
+	public bg: egret.Bitmap;
 	public constructor() {
 		super();
+		this.createBg();
 		this.createPlayer();
 		this.createBase();
 	}
@@ -22,6 +23,12 @@ class ModuleScene extends egret.EventDispatcher {
 		// stage.addEventListener(egret.Event.ONT)
 	}
 
+	private createBg():void {
+		if(this.bg == null) {
+			this.bg = AssetManager.instance.getBitmap('bg2_jpg',true,true);
+		}
+		LayerManager.bgLayer.addChild(this.bg);
+	}
 	private createPlayer():void {
 		var playerVo = GameModel.player.myPlayer;
 		var playerObject:PlayerObject = new PlayerObject(playerVo.positionX,playerVo.positionY);

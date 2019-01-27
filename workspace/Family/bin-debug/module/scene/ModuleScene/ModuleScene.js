@@ -13,6 +13,7 @@ var ModuleScene = (function (_super) {
     function ModuleScene() {
         var _this = _super.call(this) || this;
         _this.timer = new egret.Timer(1000, Number.MAX_VALUE);
+        _this.createBg();
         _this.createPlayer();
         _this.createBase();
         return _this;
@@ -27,6 +28,12 @@ var ModuleScene = (function (_super) {
         this.createBalls(50);
         // this.addRole(200,200);
         // stage.addEventListener(egret.Event.ONT)
+    };
+    ModuleScene.prototype.createBg = function () {
+        if (this.bg == null) {
+            this.bg = AssetManager.instance.getBitmap('bg2_jpg', true, true);
+        }
+        LayerManager.bgLayer.addChild(this.bg);
     };
     ModuleScene.prototype.createPlayer = function () {
         var playerVo = GameModel.player.myPlayer;

@@ -16,8 +16,7 @@ var ModuleMainUI = (function () {
         this.btnRestart.visible = false;
     };
     ModuleMainUI.prototype.onShow = function () {
-        fairygui.GRoot.inst.addChild(this.mainUI);
-        // LayerManager.mainUI.addChild(this.mainUI.displayObject);
+        LayerManager.mainUI.addChild(this.mainUI.displayObject);
         GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS, this.onChangePos, this);
     };
     ModuleMainUI.prototype.onChangePos = function () {
