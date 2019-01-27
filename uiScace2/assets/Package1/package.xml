@@ -17,6 +17,8 @@
     <image id="i5wmd" name="abtn_speed.png" path="/"/>
     <component id="m6j5f" name="BtnLeft.xml" path="/"/>
     <component id="m6j5g" name="BtnSpeed1.xml" path="/"/>
+    <image id="m6j5h" name="BTN_Name.png" path="/"/>
+    <image id="m6j5i" name="Btn_START.png" path="/"/>
   </resources>
   <publish name="Package1"/>
 </packageDescription>
