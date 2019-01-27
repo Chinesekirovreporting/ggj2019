@@ -55,9 +55,9 @@ class Player {
 			role = objects[key];
 			if((role.positionX - this.positionX)*(role.positionX - this.positionX) + 
 			(role.positionY - this.positionY) * (role.positionY - this.positionY) < 100*100) {
-				if(role.roleVo.isBall) {
+				if(role.roleVo.roleType == 1) {
 					this.playerHiting();
-				}else {
+				}else if(role.roleVo.roleType == 3){
 					this.roleHiting(role);
 				}
 				return true;

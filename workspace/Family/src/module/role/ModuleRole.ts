@@ -35,6 +35,14 @@ class ModuleRole {
 		var roleVo:RoleVo = event.data;
 		var roleObject:RoleObject = new RoleObject(roleVo.positionX,roleVo.positionY);
 		roleVo.spriteID = roleObject.spriteID;
+		if(roleVo.roleType == 1) {
+			roleObject.drawStone();
+		}else if(roleVo.roleType == 3) {
+			roleObject.drawScore();
+		}else {
+			roleObject.drawStone();
+		}
+
 		var role:Role = new Role();
 		role.roleVo = roleVo;
 		role.roleObject = roleObject;

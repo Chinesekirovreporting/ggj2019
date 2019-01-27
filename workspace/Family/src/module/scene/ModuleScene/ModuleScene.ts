@@ -21,8 +21,6 @@ class ModuleScene extends egret.EventDispatcher {
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimeFunc, this);
 		this.timer.start();
 		this.createBalls(50);
-		// this.addRole(200,200);
-		// stage.addEventListener(egret.Event.ONT)
 	}
 
 	private createBg():void {
@@ -54,9 +52,11 @@ class ModuleScene extends egret.EventDispatcher {
 			if(Math.abs(PlayerManager.inst.player.positionX - x) > 200 &&
 				Math.abs(PlayerManager.inst.player.positionY - y) > 200) {
 				var roleVo:RoleVo = new RoleVo();
+				roleVo.roleType = 1;
 				roleVo.setPosition(x,y);
 				GameModel.roles.addRole(roleVo);
 			}
+			this.createScore(roleVo);
 		}
 	}
 
@@ -71,12 +71,6 @@ class ModuleScene extends egret.EventDispatcher {
 
 	private createBase():void {
 		this.baseObject = new HomeSpace();
-	}
-
-	private addRole(positionX:number,positionY:number):void {
-		var roleVo:RoleVo = new RoleVo();
-		roleVo.setPosition(positionX, positionY);
-		GameModel.roles.addRole(roleVo);
 	}
 
 	private onChangePLayer():void {
@@ -94,7 +88,6 @@ class ModuleScene extends egret.EventDispatcher {
 	}
 
 	private onTimeFunc():void {
-		// this.addRole();
 		GameModule.mainUI.onChangePos();
 		if(PlayerManager.inst.player.playerVo.isAlive) {
 			PlayerManager.inst.player.playerVo.oxygen -= 2;

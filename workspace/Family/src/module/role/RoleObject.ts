@@ -10,13 +10,35 @@ class RoleObject extends egret.Sprite{
 	public positionY:number;
 	// 逻辑属性
 	public spriteID:number;
+	public scoreType:number;
 
 	public constructor(x:number,y:number) {
 		super();
-		this.graphics.beginFill(0xff0000);
-		this.graphics.drawCircle(0,0,50);
-		this.graphics.endFill();
 		this.init(x,y);
+	}
+
+	public drawStone():void {
+		// this.graphics.beginFill(0xff0000);
+		// this.graphics.drawCircle(0,0,50);
+		// this.graphics.endFill();
+		var id:number = Math.ceil(Math.random() * 16);
+		this._data = new egret.Bitmap(RES.getRes("img_stone_id"));
+		this.addChild(this._data);
+	}
+
+	public drawScore():void {
+		// this.graphics.beginFill(0x00cc00);
+		// this.graphics.drawCircle(0,0,30);
+		// this.graphics.endFill();
+		if(Math.random() < 0.5) {
+			this.scoreType == 1;
+			this._data = new egret.Bitmap(RES.getRes("img_score"));
+			this.addChild(this._data);
+		}else {
+			this.scoreType == 2;
+			this._data = new egret.Bitmap(RES.getRes("img_oxy"));
+			this.addChild(this._data);
+		}
 	}
 
 	private init(positionX:number, positionY:number):void {
