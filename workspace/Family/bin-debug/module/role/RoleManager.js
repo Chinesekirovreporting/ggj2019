@@ -21,13 +21,6 @@ var RoleManager = (function () {
     RoleManager.prototype.removeRole = function (role) {
         delete this.roleDict[role.spriteID];
     };
-    // public movePlayer():void {
-    // 	var role:Role;
-    // 	for(var key in this.roleDict) {
-    // 		role = this.roleDict[key];
-    // 		role.roleObject.refreshStagePosition();
-    // 	}
-    // }
     RoleManager.prototype.updateFrame = function () {
         var role;
         for (var key in this.roleDict) {

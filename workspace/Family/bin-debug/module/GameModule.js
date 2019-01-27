@@ -17,7 +17,7 @@ var GameModule = (function () {
         GameModule.role.onShow();
         GameModule.scene.onShow();
         GameModule.mainUI.onShow();
-        GameModule.joystick.show();
+        // GameModule.joystick.show();
     };
     GameModule.showTitle = function () {
         GameModule.pageInfo.show();

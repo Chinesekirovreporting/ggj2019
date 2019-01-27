@@ -5,6 +5,7 @@ var RoleType = (function () {
     function RoleType() {
         this.BALL = 1;
         this.STONE = 2;
+        this.SCORE = 3;
     }
     return RoleType;
 }());

@@ -21,6 +21,7 @@ var Joystick = (function (_super) {
         if (LayerManager.root) {
             LayerManager.root.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.onTouch, _this);
         }
+        _this._view.visible = false;
         return _this;
     }
     Joystick.prototype.onTouch = function (e) {

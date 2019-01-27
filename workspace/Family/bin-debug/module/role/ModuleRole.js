@@ -30,6 +30,15 @@ var ModuleRole = (function () {
         var roleVo = event.data;
         var roleObject = new RoleObject(roleVo.positionX, roleVo.positionY);
         roleVo.spriteID = roleObject.spriteID;
+        if (roleVo.roleType == 1) {
+            roleObject.drawStone();
+        }
+        else if (roleVo.roleType == 3) {
+            roleObject.drawScore();
+        }
+        else {
+            roleObject.drawStone();
+        }
         var role = new Role();
         role.roleVo = roleVo;
         role.roleObject = roleObject;

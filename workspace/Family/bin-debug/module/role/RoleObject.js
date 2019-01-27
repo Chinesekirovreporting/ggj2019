@@ -12,12 +12,44 @@ var RoleObject = (function (_super) {
     __extends(RoleObject, _super);
     function RoleObject(x, y) {
         var _this = _super.call(this) || this;
-        _this.graphics.beginFill(0xff0000);
-        _this.graphics.drawCircle(0, 0, 50);
-        _this.graphics.endFill();
         _this.init(x, y);
         return _this;
     }
+    RoleObject.prototype.drawStone = function () {
+        // this.graphics.beginFill(0xff0000);
+        // this.graphics.drawCircle(0,0,50);
+        // this.graphics.endFill();
+        var id = Math.ceil(Math.random() * 19);
+        this._data = new egret.Bitmap(RES.getRes("img_stone_" + id.toString() + "_png"));
+        this._data.width = 150;
+        this._data.height = 150;
+        this._data.x = -75;
+        this._data.y = -75;
+        this.addChild(this._data);
+    };
+    RoleObject.prototype.drawScore = function () {
+        // this.graphics.beginFill(0x00cc00);
+        // this.graphics.drawCircle(0,0,30);
+        // this.graphics.endFill();
+        if (Math.random() < 0.5) {
+            this.scoreType == 1;
+            this._data = new egret.Bitmap(RES.getRes("img_score_png"));
+            this._data.width = 50;
+            this._data.height = 50;
+            this._data.x = -25;
+            this._data.y = -25;
+            this.addChild(this._data);
+        }
+        else {
+            this.scoreType == 2;
+            this._data = new egret.Bitmap(RES.getRes("img_oxy_png"));
+            this._data.width = 50;
+            this._data.height = 50;
+            this._data.x = -25;
+            this._data.y = -25;
+            this.addChild(this._data);
+        }
+    };
     RoleObject.prototype.init = function (positionX, positionY) {
         this.positionX = positionX;
         this.positionY = positionY;

@@ -15,10 +15,9 @@ var PlayerObject = (function (_super) {
         // 逻辑属性
         _this.turnLeftOn = false;
         _this.turnRightOn = false;
-        _this.graphics.beginFill(0x00ff00);
-        // this.graphics.drawCircle(0,0,30);
-        _this.graphics.drawCircle(0, 0, 50);
-        _this.graphics.endFill();
+        // this.graphics.beginFill(0x00ff00);
+        // this.graphics.drawCircle(0,0,50);
+        // this.graphics.endFill();
         _this.init(x, y);
         return _this;
         // this._animation.
@@ -52,10 +51,10 @@ var PlayerObject = (function (_super) {
     };
     PlayerObject.prototype.excuteTurn = function () {
         if (this.turnLeftOn) {
-            this.rotation--;
+            this.rotation -= 5;
         }
         else if (this.turnRightOn) {
-            this.rotation++;
+            this.rotation += 5;
         }
     };
     PlayerObject.prototype.moving = function () {

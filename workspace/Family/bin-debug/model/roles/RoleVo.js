@@ -4,15 +4,20 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var RoleVo = (function () {
     function RoleVo() {
     }
-    RoleVo.prototype.setPosition = function (positionX, positionY, type) {
-        if (type === void 0) { type = 1; }
+    RoleVo.prototype.setPosition = function (positionX, positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
-        this.roleType = type;
     };
     Object.defineProperty(RoleVo.prototype, "isBall", {
         get: function () {
             return this.roleType == 1;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RoleVo.prototype, "isScore", {
+        get: function () {
+            return this.roleType == 3;
         },
         enumerable: true,
         configurable: true

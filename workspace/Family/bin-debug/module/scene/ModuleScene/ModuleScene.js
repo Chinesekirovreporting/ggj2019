@@ -28,8 +28,6 @@ var ModuleScene = (function (_super) {
         this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimeFunc, this);
         this.timer.start();
         this.createBalls(50);
-        // this.addRole(200,200);
-        // stage.addEventListener(egret.Event.ONT)
     };
     ModuleScene.prototype.createBg = function () {
         if (this.bg == null) {
@@ -43,6 +41,7 @@ var ModuleScene = (function (_super) {
         var player = new Player();
         player.playerObject = playerObject;
         player.playerVo = playerVo;
+        playerVo.isAlive = true;
         PlayerManager.inst.setPlayer(player);
     };
     ModuleScene.prototype.createBalls = function (num) {
@@ -55,21 +54,26 @@ var ModuleScene = (function (_super) {
         for (var i = 0; i < num; i++) {
             x = Math.random() * maxX - maxX / 2;
             y = Math.random() * maxY - maxY / 2;
-            if (Math.abs(PlayerManager.inst.player.positionX - x) < 500 &&
-                Math.abs(PlayerManager.inst.player.positionY - y) < 500) {
+            if (Math.abs(PlayerManager.inst.player.positionX - x) > 200 &&
+                Math.abs(PlayerManager.inst.player.positionY - y) > 200) {
                 var roleVo = new RoleVo();
+                roleVo.roleType = 1;
                 roleVo.setPosition(x, y);
                 GameModel.roles.addRole(roleVo);
+                this.createScore(roleVo);
             }
         }
     };
+    ModuleScene.prototype.createScore = function (ballVo) {
+        var scoreVo = new RoleVo();
+        scoreVo.roleType = 3;
+        var x = ballVo.positionX + 50 + Math.random() * 100;
+        var y = ballVo.positionY + 50 + Math.random() * 100;
+        scoreVo.setPosition(x, y);
+        GameModel.roles.addRole(scoreVo);
+    };
     ModuleScene.prototype.createBase = function () {
         this.baseObject = new HomeSpace();
-    };
-    ModuleScene.prototype.addRole = function (positionX, positionY) {
-        var roleVo = new RoleVo();
-        roleVo.setPosition(positionX, positionY);
-        GameModel.roles.addRole(roleVo);
     };
     ModuleScene.prototype.onChangePLayer = function () {
         PlayerManager.inst.player.playerObject.changePosition(PlayerManager.inst.player.playerVo.positionX, PlayerManager.inst.player.playerVo.positionY);
@@ -84,8 +88,14 @@ var ModuleScene = (function (_super) {
         this.timer.stop();
     };
     ModuleScene.prototype.onTimeFunc = function () {
-        // this.addRole();
         GameModule.mainUI.onChangePos();
+        if (PlayerManager.inst.player.playerVo.isAlive) {
+            PlayerManager.inst.player.playerVo.oxygen -= 2;
+            GameModule.mainUI.showProgress(PlayerManager.inst.player.playerVo.oxygen);
+        }
+        if (PlayerManager.inst.player.playerVo.oxygen <= 0) {
+            PlayerManager.inst.player.killPlayer();
+        }
     };
     ModuleScene.prototype.onEnterFrame = function (event) {
         PlayerManager.inst.updateFrame();

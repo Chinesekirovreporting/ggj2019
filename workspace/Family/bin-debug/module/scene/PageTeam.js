@@ -18,6 +18,11 @@ var PageTeam = (function (_super) {
                 _this.btnReturn.addClickListener(_this.onClick, _this);
             }
         }
+        _this.shape = _this._view.getChild("shape").asGraph;
+        var bitmap = new egret.Bitmap(RES.getRes("img_team_png"));
+        bitmap.width = 1136;
+        bitmap.height = 640;
+        _this.shape.setNativeObject(bitmap);
         return _this;
     }
     PageTeam.prototype.onClick = function (evt) {
