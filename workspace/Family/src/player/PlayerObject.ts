@@ -15,10 +15,9 @@ class PlayerObject extends egret.Sprite{
 
 	public constructor(x:number,y:number) {
 		super();
-		this.graphics.beginFill(0x00ff00);
-		// this.graphics.drawCircle(0,0,30);
-		this.graphics.drawCircle(0,0,50);
-		this.graphics.endFill();
+		// this.graphics.beginFill(0x00ff00);
+		// this.graphics.drawCircle(0,0,50);
+		// this.graphics.endFill();
 		this.init(x,y);
 		// this._animation.
 	}
