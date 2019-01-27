@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1136,640">
   <displayList>
+    <graph id="n7_m6j5" name="shape" xy="0,0" size="1136,640"/>
     <component id="n3_jei6" name="btnReturn" src="jei63" fileName="BtnReturn.xml" xy="1022,536"/>
   </displayList>
 </component>
