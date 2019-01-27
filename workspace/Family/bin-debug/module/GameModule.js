@@ -11,6 +11,7 @@ var GameModule = (function () {
         GameModule.pageInfo = new PageInfo();
         GameModule.joystick = new Joystick();
         GameModule.pageTeam = new PageTeam();
+        GameModule.asset = AssetManager.instance;
     };
     GameModule.gameStart = function () {
         GameModule.role.onShow();

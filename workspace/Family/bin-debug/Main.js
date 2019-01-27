@@ -123,6 +123,10 @@ var Main = (function (_super) {
     Main.prototype.initGame = function () {
         fairygui.UIPackage.addPackage("Package1_fui");
         fairygui.UIPackage.addPackage("joystick_fui");
+        var dbConfig = RES.getRes("dbConfig_json");
+        if (dbConfig) {
+            AssetManager.instance.loadDBAnimation(dbConfig.db);
+        }
         // fairygui.UIConfig.defaultFont = "宋体";
         // fairygui.UIConfig.verticalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_VT");
         // fairygui.UIConfig.horizontalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_HZ");

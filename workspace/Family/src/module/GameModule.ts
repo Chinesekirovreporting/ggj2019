@@ -6,6 +6,8 @@ class GameModule {
 	public static joystick: Joystick;
 	public static pageTeam: PageTeam;
 
+	public static asset: AssetManager;
+
 	public constructor() {
 	}
 
@@ -16,6 +18,8 @@ class GameModule {
 		GameModule.pageInfo = new PageInfo();
 		GameModule.joystick = new Joystick();
 		GameModule.pageTeam = new PageTeam();
+		
+		GameModule.asset = AssetManager.instance;
 	}
 
 	public static gameStart(): void {

@@ -11,7 +11,8 @@ class PlayerObject extends egret.Sprite{
 	// 逻辑属性
 	public turnLeftOn:boolean = false;
 	public turnRightOn:boolean = false;
-	
+	public player: DBArmature;
+
 	public constructor(x:number,y:number) {
 		super();
 		this.graphics.beginFill(0x00ff00);
@@ -30,6 +31,18 @@ class PlayerObject extends egret.Sprite{
 		var rotation = MathUtil.getRotationByPoints(new egret.Point(45,45),new egret.Point(0,0));
 		this.setDirection(rotation + 90);
 		this._speed = 5;
+
+		if(this.player == null) {
+			this.player = AssetManager.instance.getDBArmature('Player')
+			if(this.player) {
+				this.player.scaleX = this.player.scaleY = 0.5;
+				this.player.playOnce('start', () => {
+					this.player.play('move');
+				});
+				this.player
+				this.addChild(this.player);
+			}
+		}
 	}
 
 	/**

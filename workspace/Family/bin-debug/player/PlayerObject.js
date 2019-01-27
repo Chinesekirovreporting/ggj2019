@@ -24,6 +24,7 @@ var PlayerObject = (function (_super) {
         // this._animation.
     }
     PlayerObject.prototype.init = function (x, y) {
+        var _this = this;
         this.positionX = x;
         this.positionY = y;
         this.refreshStagePosition();
@@ -31,6 +32,17 @@ var PlayerObject = (function (_super) {
         var rotation = MathUtil.getRotationByPoints(new egret.Point(45, 45), new egret.Point(0, 0));
         this.setDirection(rotation + 90);
         this._speed = 5;
+        if (this.player == null) {
+            this.player = AssetManager.instance.getDBArmature('Player');
+            if (this.player) {
+                this.player.scaleX = this.player.scaleY = 0.5;
+                this.player.playOnce('start', function () {
+                    _this.player.play('move');
+                });
+                this.player;
+                this.addChild(this.player);
+            }
+        }
     };
     /**
      * 0点顺时针

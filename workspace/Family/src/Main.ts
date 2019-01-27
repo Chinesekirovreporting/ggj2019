@@ -64,6 +64,13 @@ class Main extends egret.DisplayObjectContainer {
     private initGame():void {
         fairygui.UIPackage.addPackage("Package1_fui");
         fairygui.UIPackage.addPackage("joystick_fui");
+
+        let dbConfig = RES.getRes("dbConfig_json");
+        if(dbConfig)
+        {
+            AssetManager.instance.loadDBAnimation(dbConfig.db);
+        }
+
         // fairygui.UIConfig.defaultFont = "宋体";
         // fairygui.UIConfig.verticalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_VT");
         // fairygui.UIConfig.horizontalScrollBar = fairygui.UIPackage.getItemURL("Basic", "ScrollBar_HZ");
@@ -83,7 +90,6 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private showGame():void {
-
         GameModule.showTitle();
         // GameModule.gameStart();
         // GameModule.joystick.show();
