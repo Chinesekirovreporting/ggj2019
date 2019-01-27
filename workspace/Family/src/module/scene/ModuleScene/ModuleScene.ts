@@ -12,6 +12,8 @@ class ModuleScene extends egret.EventDispatcher {
 	}
 	
 	public onShow():void {
+		var bg:egret.Bitmap = new egret.Bitmap(RES.getRes("img_bg_png"));
+		LayerManager.map.addChild(bg);
 		LayerManager.player.addChild(PlayerManager.inst.player.playerObject);
 		LayerManager.base.addChild(this.baseObject);
 		GameModel.player.addEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS,this.onChangePLayer,this);
@@ -48,9 +50,12 @@ class ModuleScene extends egret.EventDispatcher {
 		for(var i = 0; i < num; i++) {
 			x = Math.random() * maxX - maxX/2;
 			y = Math.random() * maxY - maxY/2;
-			var roleVo:RoleVo = new RoleVo();
-			roleVo.setPosition(x,y);
-			GameModel.roles.addRole(roleVo);
+			if(Math.abs(PlayerManager.inst.player.positionX - x) < 500 &&
+				Math.abs(PlayerManager.inst.player.positionY - y) < 500) {
+				var roleVo:RoleVo = new RoleVo();
+				roleVo.setPosition(x,y);
+				GameModel.roles.addRole(roleVo);
+			}
 		}
 	}
 
@@ -70,6 +75,7 @@ class ModuleScene extends egret.EventDispatcher {
 
 	public onExit():void {
 		LayerManager.player.removeChild(PlayerManager.inst.player.playerObject);
+		LayerManager.map.removeChildren();
 		LayerManager.base.removeChild(this.baseObject);
 		GameModel.player.removeEventListener(ModelPlayerEvent.ON_CHANGE_PLAYER_POS,this.onChangePLayer,this);
 		Root.root.removeEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
@@ -91,6 +97,7 @@ class ModuleScene extends egret.EventDispatcher {
 	public resetScene():void {
 		PlayerManager.inst.reset();
 		RoleManager.inst.reset();
+		GameModule.role.reset();
 		this.createBalls(50);
 	}
 }

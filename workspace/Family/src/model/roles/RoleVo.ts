@@ -20,6 +20,6 @@ class RoleVo {
 	}
 
 	public reset():void {
-
+		
 	}
 }

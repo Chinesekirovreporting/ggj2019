@@ -59,4 +59,8 @@ class ModuleRole {
 	private onChangePlayerPos(event:egret.Event):void {
 		
 	}
+
+	public reset():void {
+		this.objectMapViews.removeChildren();
+	}
 }
