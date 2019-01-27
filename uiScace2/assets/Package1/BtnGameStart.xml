@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="373,116" opaque="false" extention="Button">
+<component size="373,116" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
     <image id="n5_m6j5" name="n5" src="m6j5l" fileName="start.png" xy="0,0" size="373,116" aspect="true"/>
+    <graph id="n6_m6j5" name="n6" xy="0,0" size="373,116"/>
   </displayList>
   <Button/>
 </component>

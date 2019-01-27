@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1136,640">
   <displayList>
-    <image id="n4_m6j5" name="n4" src="m6j5j" fileName="title.png" xy="0,0"/>
-    <text id="n1_jei6" name="n1" xy="408,36" size="287,153" fontSize="65" color="#ffffff" text="30组 云汉&#xA;小组成员&#xA;"/>
-    <text id="n2_jei6" name="n2" xy="109,385" size="865,251" fontSize="65" color="#ffffff" autoSize="none" text="黄文皓     何嘉乐       小未&#xA;苏魁         蒋之兼       橘子&#xA;石雨哲     赵宇杰&#xA;"/>
     <component id="n3_jei6" name="btnReturn" src="jei63" fileName="BtnReturn.xml" xy="1022,536"/>
   </displayList>
 </component>
