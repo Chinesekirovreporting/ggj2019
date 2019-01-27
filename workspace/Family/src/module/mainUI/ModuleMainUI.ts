@@ -86,7 +86,7 @@ class ModuleMainUI {
 	}
 
 	public onChangePos():void {
-		this.lblPos.text = Math.ceil(PlayerManager.inst.player.positionX).toString() + "_" + Math.ceil(PlayerManager.inst.player.positionY).toString();
+		this.lblPos.text = Math.ceil(PlayerManager.inst.player.positionX).toString() + "  " + Math.ceil(PlayerManager.inst.player.positionY).toString();
 	}
 
 	public onExit():void {

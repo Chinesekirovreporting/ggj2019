@@ -55,8 +55,8 @@ class ModuleScene extends egret.EventDispatcher {
 				roleVo.roleType = 1;
 				roleVo.setPosition(x,y);
 				GameModel.roles.addRole(roleVo);
+				this.createScore(roleVo);
 			}
-			this.createScore(roleVo);
 		}
 	}
 

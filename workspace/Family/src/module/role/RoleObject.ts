@@ -21,8 +21,12 @@ class RoleObject extends egret.Sprite{
 		// this.graphics.beginFill(0xff0000);
 		// this.graphics.drawCircle(0,0,50);
 		// this.graphics.endFill();
-		var id:number = Math.ceil(Math.random() * 16);
-		this._data = new egret.Bitmap(RES.getRes("img_stone_id"));
+		var id:number = Math.ceil(Math.random() * 19);
+		this._data = new egret.Bitmap(RES.getRes("img_stone_" + id.toString() + "_png"));
+		this._data.width = 150;
+		this._data.height = 150;
+		this._data.x = -75;
+		this._data.y = -75;
 		this.addChild(this._data);
 	}
 
@@ -32,11 +36,19 @@ class RoleObject extends egret.Sprite{
 		// this.graphics.endFill();
 		if(Math.random() < 0.5) {
 			this.scoreType == 1;
-			this._data = new egret.Bitmap(RES.getRes("img_score"));
+			this._data = new egret.Bitmap(RES.getRes("img_score_png"));
+			this._data.width = 50;
+			this._data.height = 50;
+			this._data.x = -25;
+			this._data.y = -25;
 			this.addChild(this._data);
 		}else {
 			this.scoreType == 2;
-			this._data = new egret.Bitmap(RES.getRes("img_oxy"));
+			this._data = new egret.Bitmap(RES.getRes("img_oxy_png"));
+			this._data.width = 50;
+			this._data.height = 50;
+			this._data.x = -25;
+			this._data.y = -25;
 			this.addChild(this._data);
 		}
 	}
