@@ -19,6 +19,9 @@ class ModuleMainUI {
 		GameModule.scene.resetScene();
 
 		this.btnRestart.visible = false;
+		egret.setTimeout(() => {
+			PlayerManager.inst.player.playerObject._speed = 5;
+		},this,3000)
 	}
 	
 	public onShow():void {

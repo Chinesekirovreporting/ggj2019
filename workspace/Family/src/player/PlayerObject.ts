@@ -73,7 +73,7 @@ class PlayerObject extends egret.Sprite{
 		this.x = GameSetting.playerCenterX;//this.positionX;
 		this.y = GameSetting.playerCenterY;//this.positionY;
 	}
-
+  
 	public changePosition(positionX:number, positionY:number):void {
 		this.positionX = positionX;
 		this.positionY = positionY;
